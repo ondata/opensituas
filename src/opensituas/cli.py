@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 import os
+from enum import Enum
 from pathlib import Path
 from typing import Optional
 
@@ -17,8 +18,33 @@ import typer
 
 from . import base, catalog, output, territorial
 
+
+class OutputFormat(str, Enum):
+    table = "table"
+    json = "json"
+    csv = "csv"
+
+
+_EPILOG = """\
+**Per agenti:** usa `-o json` e fai il parsing con `jq`. Exit code `2` = errore API
+(messaggio su stderr); `0` = ok. **Workflow:** catalog (trova pfun + validità) → info
+(colonne) → get/count.
+
+**Esempi:**
+
+* `opensituas -o json catalog comuni | jq '.[].pfun'`
+
+* `opensituas -o json info 50`
+
+* `opensituas -o json get 50 --date 12/01/1927`
+
+* `opensituas -o json storia comune Roma`
+"""
+
 app = typer.Typer(
     help="opensituas — CLI per il SITUAS (ISTAT). Catalogo report + query territoriali.",
+    epilog=_EPILOG,
+    rich_markup_mode="markdown",
     no_args_is_help=True,
     add_completion=False,
 )
@@ -30,16 +56,11 @@ def _timeout() -> float:
 
 @app.callback()
 def _main(
-    output_mode: str = typer.Option(
-        "table", "--output", "-o", help="Formato output: table | json | csv"
+    output_mode: OutputFormat = typer.Option(
+        OutputFormat.table, "--output", "-o", help="Formato output (table per umani, json/csv per agenti)"
     ),
 ) -> None:
-    if output_mode not in ("table", "json", "csv"):
-        output.err_console.print(
-            f"[red]--output non valido:[/red] {output_mode} (usa table|json|csv)"
-        )
-        raise typer.Exit(2)
-    output.set_mode(output_mode)
+    output.set_mode(output_mode.value)
 
 
 def _run(fn):
@@ -54,7 +75,15 @@ def _run(fn):
 # --------------------------------------------------------------------------- catalogo
 
 
-@app.command("catalog")
+@app.command(
+    "catalog",
+    epilog=(
+        "**Esempi:**\n\n"
+        "* `opensituas -o json catalog comuni`\n\n"
+        "* `opensituas catalog --ambito 'Unità statistiche'`\n\n"
+        "* `opensituas -o json catalog | jq '.[] | select(.analisi==\"PERIODO\") | .pfun'`"
+    ),
+)
 def catalog_cmd(
     keyword: Optional[str] = typer.Argument(None, help="Filtro sul titolo del report"),
     ambito: Optional[str] = typer.Option(None, "--ambito", "-a", help="Filtra per ambito territoriale"),
@@ -85,8 +114,11 @@ def catalog_cmd(
 app.command("list", hidden=True)(catalog_cmd)
 
 
-@app.command("info")
-def info_cmd(pfun: int = typer.Argument(..., help="Id report")) -> None:
+@app.command(
+    "info",
+    epilog="**Esempio:** `opensituas -o json info 50 | jq '.colonne[].colonna'`",
+)
+def info_cmd(pfun: int = typer.Argument(..., help="Id report (campo pfun del catalogo)")) -> None:
     """Metadati di un report: descrizione e dettaglio delle colonne."""
 
     def go():
@@ -117,12 +149,21 @@ def info_cmd(pfun: int = typer.Argument(..., help="Id report")) -> None:
         output.emit(result)
 
 
-@app.command("get")
+@app.command(
+    "get",
+    epilog=(
+        "La data deve cadere nella validità mostrata da `catalog` (altrimenti exit 2: "
+        "REPORT NON DISPONIBILE).\n\n"
+        "**Esempi:**\n\n"
+        "* `opensituas -o json get 50 --date 12/01/1927`\n\n"
+        "* `opensituas -o csv get 98 --from 17/03/1861 --to 31/05/2026 --out comuni.csv`"
+    ),
+)
 def get_cmd(
     pfun: int = typer.Argument(..., help="Id report"),
-    date: Optional[str] = typer.Option(None, "--date", "-d", help="Data DD/MM/YYYY (report a data singola)"),
-    date_from: Optional[str] = typer.Option(None, "--from", help="Data inizio (report a intervallo)"),
-    date_to: Optional[str] = typer.Option(None, "--to", help="Data fine (report a intervallo)"),
+    date: Optional[str] = typer.Option(None, "--date", "-d", help="Data DD/MM/YYYY (report a data singola, analisi=DATA)"),
+    date_from: Optional[str] = typer.Option(None, "--from", help="Data inizio DD/MM/YYYY (report a intervallo, analisi=PERIODO)"),
+    date_to: Optional[str] = typer.Option(None, "--to", help="Data fine DD/MM/YYYY (report a intervallo, analisi=PERIODO)"),
     out: Optional[Path] = typer.Option(None, "--out", help="Salva su file (formato secondo --output)"),
 ) -> None:
     """Scarica i dati di un report. Default: data valida dal catalogo; override con --date / --from/--to."""
@@ -148,7 +189,10 @@ def get_cmd(
         output.emit(rows, title=f"Report {pfun}")
 
 
-@app.command("count")
+@app.command(
+    "count",
+    epilog="**Esempio:** `opensituas -o json count 50 --date 12/01/1927 | jq '.[0].NUM_ROWS'`",
+)
 def count_cmd(
     pfun: int = typer.Argument(..., help="Id report"),
     date: Optional[str] = typer.Option(None, "--date", "-d"),
@@ -168,7 +212,17 @@ def count_cmd(
 # ----------------------------------------------------------------- query territoriali
 
 
-@app.command("storia")
+@app.command(
+    "storia",
+    epilog=(
+        "Se il nome è ambiguo (più unità) il comando esce con codice 2 elencando i codici: "
+        "rilancia con un codice.\n\n"
+        "**Esempi:**\n\n"
+        "* `opensituas -o json storia comune Roma`\n\n"
+        "* `opensituas -o json storia provincia 058 --dettaglio`\n\n"
+        "* `opensituas -o json storia regione Lazio`"
+    ),
+)
 def storia_cmd(
     tipo: str = typer.Argument(..., help="comune | provincia | regione"),
     query: str = typer.Argument(..., help="Denominazione o codice dell'unità"),
@@ -188,7 +242,10 @@ def storia_cmd(
         output.emit(result)
 
 
-@app.command("cerca-codice")
+@app.command(
+    "cerca-codice",
+    epilog="**Esempio:** `opensituas -o json cerca-codice comune Roma`",
+)
 def cerca_codice_cmd(
     tipo: str = typer.Argument(..., help="comune | provincia | regione"),
     query: str = typer.Argument(..., help="Denominazione o codice da cercare"),

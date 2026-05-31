@@ -2,6 +2,8 @@ LOG
 
 ## 2026-05-31
 
+- Help ottimizzato per agenti: `--output` come enum (`table|json|csv`, validato), epilog
+  top-level con il contratto agente (`-o json`, exit code, workflow), esempi per ogni comando.
 - Primo rilascio `opensituas` v0.1.0.
 - API SITUAS mappate via curl + agent-browser (tracciamento traffico delle pagine SPA).
 - Comandi catalogo: `catalog`/`list`, `info`, `get`, `count` (74 report; date dai link
