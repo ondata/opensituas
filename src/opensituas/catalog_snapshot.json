@@ -1,0 +1,966 @@
+{
+"items":[
+{
+"Id report":42
+,"Titolo report":"Elenco Ripartizioni geografiche"
+,"Inizio\/fine validit\u00E0 report":"17\/03\/1861 - 11\/01\/1927"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Ripartizione geografica"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=42\u0026pdata=17\/03\/1861"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=42\u0026pdata=17\/03\/1861"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=42\u0026pdata=17\/03\/1861"
+,"SHOW_DATE":"Y"
+}
+,{
+"Id report":43
+,"Titolo report":"Elenco Ripartizioni geografiche"
+,"Inizio\/fine validit\u00E0 report":"12\/01\/1927 - 31\/12\/1947"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Ripartizione geografica"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=43\u0026pdata=12\/01\/1927"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=43\u0026pdata=12\/01\/1927"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=43\u0026pdata=12\/01\/1927"
+,"SHOW_DATE":"Y"
+}
+,{
+"Id report":44
+,"Titolo report":"Elenco Compartimenti"
+,"Inizio\/fine validit\u00E0 report":"17\/03\/1861 - 11\/01\/1927"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Compartimento"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=44\u0026pdata=17\/03\/1861"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=44\u0026pdata=17\/03\/1861"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=44\u0026pdata=17\/03\/1861"
+,"SHOW_DATE":"Y"
+}
+,{
+"Id report":46
+,"Titolo report":"Elenco Compartimenti"
+,"Inizio\/fine validit\u00E0 report":"12\/01\/1927 - 31\/12\/1947"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Compartimento"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=46\u0026pdata=12\/01\/1927"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=46\u0026pdata=12\/01\/1927"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=46\u0026pdata=12\/01\/1927"
+,"SHOW_DATE":"Y"
+}
+,{
+"Id report":47
+,"Titolo report":"Elenco Circondari\/Distretti"
+,"Inizio\/fine validit\u00E0 report":"17\/03\/1861 - 11\/01\/1927"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Circondario\/Distretto"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=47\u0026pdata=17\/03\/1861"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=47\u0026pdata=17\/03\/1861"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=47\u0026pdata=17\/03\/1861"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":48
+,"Titolo report":"Elenco Province"
+,"Inizio\/fine validit\u00E0 report":"17\/03\/1861 - 11\/01\/1927"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Province"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=48\u0026pdata=17\/03\/1861"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=48\u0026pdata=17\/03\/1861"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=48\u0026pdata=17\/03\/1861"
+,"SHOW_DATE":"Y"
+}
+,{
+"Id report":49
+,"Titolo report":"Elenco Province"
+,"Inizio\/fine validit\u00E0 report":"12\/01\/1927 - 31\/12\/1947"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Province"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=49\u0026pdata=12\/01\/1927"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=49\u0026pdata=12\/01\/1927"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=49\u0026pdata=12\/01\/1927"
+,"SHOW_DATE":"Y"
+}
+,{
+"Id report":50
+,"Titolo report":"Elenco dei codici e delle denominazioni delle unit\u00E0 territoriali"
+,"Inizio\/fine validit\u00E0 report":"12\/01\/1927 - 31\/12\/1947"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Comune"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=50\u0026pdata=12\/01\/1927"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=50\u0026pdata=12\/01\/1927"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=50\u0026pdata=12\/01\/1927"
+,"SHOW_DATE":"Y"
+}
+,{
+"Id report":51
+,"Titolo report":"Elenco dei codici e delle denominazioni delle unit\u00E0 territoriali"
+,"Inizio\/fine validit\u00E0 report":"17\/03\/1861 - 11\/01\/1927"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Comune"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=51\u0026pdata=17\/03\/1861"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=51\u0026pdata=17\/03\/1861"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=51\u0026pdata=17\/03\/1861"
+,"SHOW_DATE":"Y"
+}
+,{
+"Id report":61
+,"Titolo report":"Elenco dei codici e delle denominazioni delle unit\u00E0 territoriali"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/1948 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Comune"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=61\u0026pdata=01\/01\/1948"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=61\u0026pdata=01\/01\/1948"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=61\u0026pdata=01\/01\/1948"
+,"SHOW_DATE":"Y"
+}
+,{
+"Id report":63
+,"Titolo report":"Province\/Uts - Dimensione"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/1948 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Provincia\/Uts"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=63\u0026pdata=01\/01\/1948"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=63\u0026pdata=01\/01\/1948"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=63\u0026pdata=01\/01\/1948"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":64
+,"Titolo report":"Elenco Province\/Uts"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/1948 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Provincia\/Uts"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=64\u0026pdata=01\/01\/1948"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=64\u0026pdata=01\/01\/1948"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=64\u0026pdata=01\/01\/1948"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":65
+,"Titolo report":"Regioni - Confronto Nomenclature europee (Nuts)"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/2006 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Regione"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=65\u0026pdata=01\/01\/2006"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=65\u0026pdata=01\/01\/2006"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=65\u0026pdata=01\/01\/2006"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":66
+,"Titolo report":"Regione - Dimensione"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/1948 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Regione"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=66\u0026pdata=01\/01\/1948"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=66\u0026pdata=01\/01\/1948"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=66\u0026pdata=01\/01\/1948"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":68
+,"Titolo report":"Elenco Regioni"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/1948 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Regione"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=68\u0026pdata=01\/01\/1948"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=68\u0026pdata=01\/01\/1948"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=68\u0026pdata=01\/01\/1948"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":69
+,"Titolo report":"Ripartizioni geografiche - Confronto Nomenclature europee (Nuts)"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/2006 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Ripartizione geografica"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=69\u0026pdata=01\/01\/2006"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=69\u0026pdata=01\/01\/2006"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=69\u0026pdata=01\/01\/2006"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":70
+,"Titolo report":"Ripartizioni geografiche - Dimensione"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/1948 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Ripartizione geografica"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=70\u0026pdata=01\/01\/1948"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=70\u0026pdata=01\/01\/1948"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=70\u0026pdata=01\/01\/1948"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":71
+,"Titolo report":"Elenco Ripartizioni geografiche"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/1948 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Ripartizione geografica"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=71\u0026pdata=01\/01\/1948"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=71\u0026pdata=01\/01\/1948"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=71\u0026pdata=01\/01\/1948"
+,"SHOW_DATE":"Y"
+}
+,{
+"Id report":73
+,"Titolo report":"Comuni - Caratteristiche del territorio"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/1948 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Comune"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=73\u0026pdata=01\/01\/1948"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=73\u0026pdata=01\/01\/1948"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=73\u0026pdata=01\/01\/1948"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":74
+,"Titolo report":"Comuni - Dimensione"
+,"Inizio\/fine validit\u00E0 report":"04\/11\/1951 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Comune"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=74\u0026pdata=04\/11\/1951"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=74\u0026pdata=04\/11\/1951"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=74\u0026pdata=04\/11\/1951"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":75
+,"Titolo report":"Comuni - Aree di policy"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/2014 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Comune"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=75\u0026pdata=01\/01\/2014"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=75\u0026pdata=01\/01\/2014"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=75\u0026pdata=01\/01\/2014"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":76
+,"Titolo report":"Comuni - Confronto Nomenclature europee (Nuts)"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/2006 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Comune"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=76\u0026pdata=01\/01\/2006"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=76\u0026pdata=01\/01\/2006"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=76\u0026pdata=01\/01\/2006"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":82
+,"Titolo report":"Sistemi Locali del Lavoro 2001 - Composizione"
+,"Inizio\/fine validit\u00E0 report":"21\/10\/2001 - 08\/10\/2011"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Sistemi locali del lavoro"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=82\u0026pdata=21\/10\/2001"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=82\u0026pdata=21\/10\/2001"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=82\u0026pdata=21\/10\/2001"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":83
+,"Titolo report":"Sistemi Locali del Lavoro 2001 - Dimensione"
+,"Inizio\/fine validit\u00E0 report":"21\/10\/2001 - 08\/10\/2011"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Sistemi locali del lavoro"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=83\u0026pdata=21\/10\/2001"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=83\u0026pdata=21\/10\/2001"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=83\u0026pdata=21\/10\/2001"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":85
+,"Titolo report":"Sistemi Locali del Lavoro 2001 - Caratteristiche"
+,"Inizio\/fine validit\u00E0 report":"21\/10\/2001 - 08\/10\/2011"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Sistemi locali del lavoro"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=85\u0026pdata=21\/10\/2001"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=85\u0026pdata=21\/10\/2001"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=85\u0026pdata=21\/10\/2001"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":86
+,"Titolo report":"Sistemi Locali del Lavoro 2011 - Composizione"
+,"Inizio\/fine validit\u00E0 report":"09\/10\/2011 - 30\/12\/2021"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Sistemi locali del lavoro"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=86\u0026pdata=09\/10\/2011"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=86\u0026pdata=09\/10\/2011"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=86\u0026pdata=09\/10\/2011"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":87
+,"Titolo report":"Sistemi Locali del Lavoro 2011 - Dimensione"
+,"Inizio\/fine validit\u00E0 report":"09\/10\/2011 - 30\/12\/2021"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Sistemi locali del lavoro"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=87\u0026pdata=09\/10\/2011"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=87\u0026pdata=09\/10\/2011"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=87\u0026pdata=09\/10\/2011"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":88
+,"Titolo report":"Sistemi Locali del Lavoro 2011 - Classificazioni sperimentali"
+,"Inizio\/fine validit\u00E0 report":"09\/10\/2011 - 30\/12\/2021"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Sistemi locali del lavoro"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=88\u0026pdata=09\/10\/2011"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=88\u0026pdata=09\/10\/2011"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=88\u0026pdata=09\/10\/2011"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":90
+,"Titolo report":"Sistemi Locali del Lavoro 2011 - Caratteristiche"
+,"Inizio\/fine validit\u00E0 report":"09\/10\/2011 - 30\/12\/2021"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Sistemi locali del lavoro"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=90\u0026pdata=09\/10\/2011"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=90\u0026pdata=09\/10\/2011"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=90\u0026pdata=09\/10\/2011"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":91
+,"Titolo report":"Zone urbane funzionali 2011 - Composizione"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/2018 - 30\/12\/2021"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Zone urbane funzionali"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=91\u0026pdata=01\/01\/2018"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=91\u0026pdata=01\/01\/2018"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=91\u0026pdata=01\/01\/2018"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":92
+,"Titolo report":"Zone urbane funzionali 2011 - Dimensione"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/2018 - 30\/12\/2021"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Zone urbane funzionali"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=92\u0026pdata=01\/01\/2018"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=92\u0026pdata=01\/01\/2018"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=92\u0026pdata=01\/01\/2018"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":98
+,"Titolo report":"Comuni soppressi o ceduti a stato estero"
+,"Inizio\/fine validit\u00E0 report":"17\/03\/1861 - 31\/05\/2026"
+,"Analisi temporale":"PERIODO"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Comune"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=98\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=98\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=98\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":99
+,"Titolo report":"Traslazione Comuni Data inizio \u2013 Data fine"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/1991 - 31\/05\/2026"
+,"Analisi temporale":"ATTUALIZZAZIONE"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Comune"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=99\u0026pdatada=01\/01\/1991\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=99\u0026pdatada=01\/01\/1991\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=99\u0026pdatada=01\/01\/1991\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":100
+,"Titolo report":"Comuni costituiti o annessi da stato estero"
+,"Inizio\/fine validit\u00E0 report":"17\/03\/1861 - 31\/05\/2026"
+,"Analisi temporale":"PERIODO"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Comune"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=100\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=100\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=100\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":102
+,"Titolo report":"Province\/Uts - Confronto Nomenclature europee (Nuts)"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/2006 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Provincia\/Uts"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=102\u0026pdata=01\/01\/2006"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=102\u0026pdata=01\/01\/2006"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=102\u0026pdata=01\/01\/2006"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":103
+,"Titolo report":"Comuni con variazioni territoriali"
+,"Inizio\/fine validit\u00E0 report":"17\/03\/1861 - 31\/05\/2026"
+,"Analisi temporale":"PERIODO"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Comune"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=103\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=103\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=103\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":104
+,"Titolo report":"Comuni con cambio denominazione"
+,"Inizio\/fine validit\u00E0 report":"17\/03\/1861 - 31\/05\/2026"
+,"Analisi temporale":"PERIODO"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Comune"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=104\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=104\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=104\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":105
+,"Titolo report":"Comuni con variazione del codice statistico"
+,"Inizio\/fine validit\u00E0 report":"17\/03\/1861 - 31\/05\/2026"
+,"Analisi temporale":"PERIODO"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Comune"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=105\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=105\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=105\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":106
+,"Titolo report":"Compartimenti\/Regioni soppresse o cedute a Stato estero"
+,"Inizio\/fine validit\u00E0 report":"17\/03\/1861 - 31\/05\/2026"
+,"Analisi temporale":"PERIODO"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Compartimento\/Regione"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=106\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=106\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=106\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":107
+,"Titolo report":"Compartimenti\/Regioni costituite o annesse da stato estero"
+,"Inizio\/fine validit\u00E0 report":"17\/03\/1861 - 31\/05\/2026"
+,"Analisi temporale":"PERIODO"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Compartimento\/Regione"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=107\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=107\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=107\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":108
+,"Titolo report":"Compartimenti\/Regioni con cambio denominazione"
+,"Inizio\/fine validit\u00E0 report":"17\/03\/1861 - 31\/05\/2026"
+,"Analisi temporale":"PERIODO"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Compartimento\/Regione"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=108\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=108\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=108\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":112
+,"Titolo report":"Province-Uts soppresse o cedute a stato estero"
+,"Inizio\/fine validit\u00E0 report":"17\/03\/1861 - 31\/05\/2026"
+,"Analisi temporale":"PERIODO"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Provincia\/Uts"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=112\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=112\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=112\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":113
+,"Titolo report":"Province-Uts costituite o annesse da Stato estero"
+,"Inizio\/fine validit\u00E0 report":"17\/03\/1861 - 31\/05\/2026"
+,"Analisi temporale":"PERIODO"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Provincia\/Uts"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=113\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=113\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=113\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":114
+,"Titolo report":"Province-Uts con cambio denominazione"
+,"Inizio\/fine validit\u00E0 report":"17\/03\/1861 - 31\/05\/2026"
+,"Analisi temporale":"PERIODO"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Provincia\/Uts"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=114\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=114\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=114\u0026pdatada=17\/03\/1861\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":120
+,"Titolo report":"Distretti Industriali 2011 - Dimensione"
+,"Inizio\/fine validit\u00E0 report":"09\/10\/2011 - 30\/12\/2021"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Distretti industriali"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=120\u0026pdata=09\/10\/2011"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=120\u0026pdata=09\/10\/2011"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=120\u0026pdata=09\/10\/2011"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":121
+,"Titolo report":"Distretti Industriali 2011 - Composizione"
+,"Inizio\/fine validit\u00E0 report":"09\/10\/2011 - 30\/12\/2021"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Distretti industriali"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=121\u0026pdata=09\/10\/2011"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=121\u0026pdata=09\/10\/2011"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=121\u0026pdata=09\/10\/2011"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":122
+,"Titolo report":"Distretti Industriali 2011 - Classificazioni sperimentali"
+,"Inizio\/fine validit\u00E0 report":"09\/10\/2011 - 30\/12\/2021"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Distretti industriali"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=122\u0026pdata=09\/10\/2011"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=122\u0026pdata=09\/10\/2011"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=122\u0026pdata=09\/10\/2011"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":128
+,"Titolo report":"Elenco comuni soppressi e non ricostituiti"
+,"Inizio\/fine validit\u00E0 report":"17\/03\/1861 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Comune"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=128\u0026pdata=17\/03\/1861"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=128\u0026pdata=17\/03\/1861"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=128\u0026pdata=17\/03\/1861"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":129
+,"Titolo report":"Variazioni amministrative e territoriali dei comuni dal  1991"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/1991 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Comune"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=129\u0026pdata=01\/01\/1991"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=129\u0026pdata=01\/01\/1991"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=129\u0026pdata=01\/01\/1991"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":130
+,"Titolo report":"Elenco delle denominazioni precedenti"
+,"Inizio\/fine validit\u00E0 report":"17\/03\/1861 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Comune"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=130\u0026pdata=17\/03\/1861"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=130\u0026pdata=17\/03\/1861"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=130\u0026pdata=17\/03\/1861"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":253
+,"Titolo report":"Zone urbane funzionali 2011 - Caratteristiche"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/2018 - 30\/12\/2021"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Zone urbane funzionali"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=253\u0026pdata=01\/01\/2018"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=253\u0026pdata=01\/01\/2018"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=253\u0026pdata=01\/01\/2018"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":298
+,"Titolo report":"Confronto Unit\u00E0 territoriali a due date"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/1991 - 31\/05\/2026"
+,"Analisi temporale":"ATTUALIZZAZIONE"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Comune"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=298\u0026pdatada=01\/01\/1991\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=298\u0026pdatada=01\/01\/1991\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=298\u0026pdatada=01\/01\/1991\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":304
+,"Titolo report":"Traslazione codici e denominazioni comunali nel periodo"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/1991 - 31\/05\/2026"
+,"Analisi temporale":"ATTUALIZZAZIONE"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Comune"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=304\u0026pdatada=01\/01\/1991\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=304\u0026pdatada=01\/01\/1991\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=304\u0026pdatada=01\/01\/1991\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":307
+,"Titolo report":"Comuni con modifica dei limiti territoriali"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/1991 - 31\/05\/2026"
+,"Analisi temporale":"ATTUALIZZAZIONE"
+,"Ambito territoriale":"Unit\u00E0 amministrative"
+,"Unit\u00E0 territoriale":"Comune"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=307\u0026pdatada=01\/01\/1991\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=307\u0026pdatada=01\/01\/1991\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=307\u0026pdatada=01\/01\/1991\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":408
+,"Titolo report":"Sistemi Locali del Lavoro (SLL) 2021 \u2013 Composizione"
+,"Inizio\/fine validit\u00E0 report":"31\/12\/2021 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Sistemi locali del lavoro"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=408\u0026pdata=31\/12\/2021"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=408\u0026pdata=31\/12\/2021"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=408\u0026pdata=31\/12\/2021"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":409
+,"Titolo report":"Sistemi Locali del Lavoro (SLL) 2021 \u2013 Dimensione"
+,"Inizio\/fine validit\u00E0 report":"31\/12\/2021 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Sistemi locali del lavoro"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=409\u0026pdata=31\/12\/2021"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=409\u0026pdata=31\/12\/2021"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=409\u0026pdata=31\/12\/2021"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":411
+,"Titolo report":"Sistemi Locali del Lavoro (SLL) 2021 \u2013 Caratteristiche"
+,"Inizio\/fine validit\u00E0 report":"31\/12\/2021 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Sistemi locali del lavoro"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=411\u0026pdata=31\/12\/2021"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=411\u0026pdata=31\/12\/2021"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=411\u0026pdata=31\/12\/2021"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":413
+,"Titolo report":"Zone urbane funzionali (FUA) 2021 \u2013 Dimensione"
+,"Inizio\/fine validit\u00E0 report":"31\/12\/2021 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Zone urbane funzionali"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=413\u0026pdata=31\/12\/2021"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=413\u0026pdata=31\/12\/2021"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=413\u0026pdata=31\/12\/2021"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":414
+,"Titolo report":"Composizione delle Citt\u00E0 (Cities) 2021"
+,"Inizio\/fine validit\u00E0 report":"31\/12\/2021 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Zone urbane funzionali"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=414\u0026pdata=31\/12\/2021"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=414\u0026pdata=31\/12\/2021"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=414\u0026pdata=31\/12\/2021"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":415
+,"Titolo report":"Zone urbane funzionali (FUA) 2021 \u2013 Caratteristiche"
+,"Inizio\/fine validit\u00E0 report":"31\/12\/2021 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Zone urbane funzionali"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=415\u0026pdata=31\/12\/2021"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=415\u0026pdata=31\/12\/2021"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=415\u0026pdata=31\/12\/2021"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":427
+,"Titolo report":"Composizione delle Citt\u00E0 (Cities) 2011"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/2018 - 30\/12\/2021"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Zone urbane funzionali"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=427\u0026pdata=01\/01\/2018"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=427\u0026pdata=01\/01\/2018"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=427\u0026pdata=01\/01\/2018"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":441
+,"Titolo report":"Sistemi Locali del Lavoro (SLL) \u2013 Confronto Composizione 2011-2021"
+,"Inizio\/fine validit\u00E0 report":"31\/12\/2021 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Sistemi locali del lavoro"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=441\u0026pdata=31\/12\/2021"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=441\u0026pdata=31\/12\/2021"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=441\u0026pdata=31\/12\/2021"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":444
+,"Titolo report":"Sistemi Locali del Lavoro (SLL) 2021 \u2013 Classificazioni e tassonomie"
+,"Inizio\/fine validit\u00E0 report":"31\/12\/2021 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Sistemi locali del lavoro"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=444\u0026pdata=31\/12\/2021"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=444\u0026pdata=31\/12\/2021"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=444\u0026pdata=31\/12\/2021"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":446
+,"Titolo report":"Zone urbane funzionali (FUA) 2021 \u2013 Composizione"
+,"Inizio\/fine validit\u00E0 report":"31\/12\/2021 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Zone urbane funzionali"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=446\u0026pdata=31\/12\/2021"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=446\u0026pdata=31\/12\/2021"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=446\u0026pdata=31\/12\/2021"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":447
+,"Titolo report":"Zone urbane funzionali (FUA) \u2013 Confronto composizione 2011-2021"
+,"Inizio\/fine validit\u00E0 report":"31\/12\/2021 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Zone urbane funzionali"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=447\u0026pdata=31\/12\/2021"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=447\u0026pdata=31\/12\/2021"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=447\u0026pdata=31\/12\/2021"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":448
+,"Titolo report":"Nomenclature europee. Composizione e caratteristiche territoriali"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/2006 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Nuts"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=448\u0026pdata=01\/01\/2006"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=448\u0026pdata=01\/01\/2006"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=448\u0026pdata=01\/01\/2006"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":449
+,"Titolo report":"Nuts 3. Dimensione e classificazioni"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/2006 - 31\/05\/2026"
+,"Analisi temporale":"DATA"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Nuts"
+,"parametri necessari":"pfun - pdata"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=449\u0026pdata=01\/01\/2006"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=449\u0026pdata=01\/01\/2006"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=449\u0026pdata=01\/01\/2006"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":450
+,"Titolo report":"Traslazione Nuts e loro composizione Data inizio \u2013 Data fine"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/2006 - 31\/05\/2026"
+,"Analisi temporale":"ATTUALIZZAZIONE"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Nuts"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=450\u0026pdatada=01\/01\/2006\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=450\u0026pdatada=01\/01\/2006\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=450\u0026pdatada=01\/01\/2006\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":451
+,"Titolo report":"Nuts \u2013 Traslazione codici comunali nel periodo"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/2006 - 31\/05\/2026"
+,"Analisi temporale":"ATTUALIZZAZIONE"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Nuts"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=451\u0026pdatada=01\/01\/2006\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=451\u0026pdatada=01\/01\/2006\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=451\u0026pdatada=01\/01\/2006\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":459
+,"Titolo report":"Traslazione Sistemi Locali del Lavoro (SLL) e loro composizione Data inizio \u2013 Data fine"
+,"Inizio\/fine validit\u00E0 report":"09\/10\/2011 - 31\/05\/2026"
+,"Analisi temporale":"ATTUALIZZAZIONE"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Sistemi locali del lavoro"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=459\u0026pdatada=09\/10\/2011\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=459\u0026pdatada=09\/10\/2011\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=459\u0026pdatada=09\/10\/2011\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":460
+,"Titolo report":"Confronto composizione Sistemi Locali del Lavoro (SLL) a due date"
+,"Inizio\/fine validit\u00E0 report":"09\/10\/2011 - 31\/05\/2026"
+,"Analisi temporale":"ATTUALIZZAZIONE"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Sistemi locali del lavoro"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=460\u0026pdatada=09\/10\/2011\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=460\u0026pdatada=09\/10\/2011\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=460\u0026pdatada=09\/10\/2011\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":461
+,"Titolo report":"Sll - Traslazione dei codici comunali nel periodo"
+,"Inizio\/fine validit\u00E0 report":"09\/10\/2011 - 31\/05\/2026"
+,"Analisi temporale":"ATTUALIZZAZIONE"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Sistemi locali del lavoro"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=461\u0026pdatada=09\/10\/2011\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=461\u0026pdatada=09\/10\/2011\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=461\u0026pdatada=09\/10\/2011\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":462
+,"Titolo report":"Traslazione Zone urbane funzionali (FUA) e loro composizione Data inizio \u2013 Data fine"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/2018 - 31\/05\/2026"
+,"Analisi temporale":"ATTUALIZZAZIONE"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Zone urbane funzionali"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=462\u0026pdatada=01\/01\/2018\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=462\u0026pdatada=01\/01\/2018\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=462\u0026pdatada=01\/01\/2018\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+,{
+"Id report":463
+,"Titolo report":"Confronto composizione Zone urbane funzionali (Fua) a due date"
+,"Inizio\/fine validit\u00E0 report":"01\/01\/2018 - 31\/05\/2026"
+,"Analisi temporale":"ATTUALIZZAZIONE"
+,"Ambito territoriale":"Unit\u00E0 statistiche"
+,"Unit\u00E0 territoriale":"Zone urbane funzionali"
+,"parametri necessari":"pfun - pdatada - pdataa"
+,"SPOOL_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljson?pfun=463\u0026pdatada=01\/01\/2018\u0026pdataa=31\/05\/2026"
+,"COUNT_LINK":"https:\/\/situas-servizi.istat.it\/publish\/reportspooljsoncount?pfun=463\u0026pdatada=01\/01\/2018\u0026pdataa=31\/05\/2026"
+,"INFO_LINK":"https:\/\/situas-servizi.istat.it\/publish\/anagrafica_report_metadato_web?pfun=463\u0026pdatada=01\/01\/2018\u0026pdataa=31\/05\/2026"
+,"SHOW_DATE":"N"
+}
+]
+}

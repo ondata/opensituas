@@ -1,0 +1,143 @@
+{
+"swagger": "2.0",
+"info": {
+"title": "ORDS generated API for publish",
+"version": "1.0.0"
+},
+"host": "situas-servizi.istat.it",
+"basePath": "/publish",
+"schemes": [
+"https"
+],
+"produces": [
+"application/json"
+],
+"paths": {
+"/reportspooljson": {
+"get": {
+"description": "Retrieve a record from publish",
+"responses": {
+"200": {
+"description": "The queried record.",
+"schema": {
+"type": "object",
+"properties": {}
+}
+}
+},
+"parameters": [
+{
+"name": "pfun",
+"in": "query",
+"type": "string",
+"description": "Implicit parameter"
+},
+{
+"name": "pdata",
+"in": "query",
+"type": "string",
+"description": "Implicit parameter"
+},
+{
+"name": "pdataa",
+"in": "query",
+"type": "string",
+"description": "Implicit parameter"
+},
+{
+"name": "pdatada",
+"in": "query",
+"type": "string",
+"description": "Implicit parameter"
+}
+]
+}
+},
+"/anagrafica_report_metadato_web": {
+"get": {
+"description": "Retrieve a record from publish",
+"responses": {
+"200": {
+"description": "The queried record.",
+"schema": {
+"type": "object",
+"properties": {}
+}
+}
+},
+"parameters": [
+{
+"name": "pdata",
+"in": "query",
+"type": "string",
+"description": "Implicit parameter"
+},
+{
+"name": "pdatada",
+"in": "query",
+"type": "string",
+"description": "Implicit parameter"
+},
+{
+"name": "pfun",
+"in": "query",
+"type": "string",
+"description": "Implicit parameter"
+}
+]
+}
+},
+"/reportspooljsoncount": {
+"get": {
+"description": "Retrieve a record from publish",
+"responses": {
+"200": {
+"description": "The queried record.",
+"schema": {
+"type": "object",
+"properties": {}
+}
+}
+},
+"parameters": [
+{
+"name": "pfun",
+"in": "query",
+"type": "string",
+"description": "Implicit parameter"
+},
+{
+"name": "pdata",
+"in": "query",
+"type": "string",
+"description": "Implicit parameter"
+},
+{
+"name": "pdataa",
+"in": "query",
+"type": "string",
+"description": "Implicit parameter"
+},
+{
+"name": "pdatada",
+"in": "query",
+"type": "string",
+"description": "Implicit parameter"
+}
+]
+}
+}
+},
+"definitions": {
+"STRING": {
+"type": "string"
+},
+"publish_ITEM": {
+"properties": {
+"body_text": {
+"type": "string"
+}
+}
+}
+}
+}
