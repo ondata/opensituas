@@ -4,6 +4,8 @@ CLI per il **SITUAS** — Sistema Informativo Territoriale delle Unità Amminist
 Statistiche (ISTAT) — progettata per essere orchestrata da un agente AI: output
 strutturato (`table`/`json`/`csv`), errori auto-esplicativi, catalogo cachato.
 
+opensituas è un'idea di [Alice Corona](https://alice-corona.eu/).
+
 ## Installazione
 
 ```bash
