@@ -25,5 +25,9 @@ Segue il flusso di `opensdmx/docs/release.md`. Versione già 0.1.0 in pyproject.
 - [ ] `uv build` + `twine upload dist/opensituas-0.1.0*` (confermo prima)
 - [ ] `uv tool install --editable .`
 
-## Domande aperte
-- Note GitHub release: uso il LOG.md? (sì salvo diverso avviso)
+## Review — completata
+- 0.1.0 pubblicata su PyPI: https://pypi.org/project/opensituas/0.1.0/ (HTTP 200)
+- GitHub release v0.1.0 (non-draft) su repo reso PUBLIC
+- pyproject allineato a opensdmx; LICENSE MIT + docs/release.md aggiunti
+- Fix ruff F841; ruff pulito, 18 test verdi, `twine check` PASSED
+- CLI locale reinstallata (opensituas==0.1.0 editable)

@@ -28,7 +28,8 @@ class OutputFormat(str, Enum):
 _EPILOG = """\
 **Per agenti:** usa `-o json` e fai il parsing con `jq`. Exit code `2` = errore API
 (messaggio su stderr); `0` = ok. **Workflow:** catalog (trova pfun + validità) → info
-(colonne) → get/count.
+(colonne) → get/count. Per l'auto-orientamento: `agent-context` (schema JSON della CLI)
+e `which <query>` (discovery report da linguaggio naturale).
 
 **Esempi:**
 
@@ -39,7 +40,86 @@ _EPILOG = """\
 * `opensituas -o json get 50 --date 12/01/1927`
 
 * `opensituas -o json storia comune Roma`
+
+* `opensituas which "comuni per anno"`
 """
+
+_AGENT_CONTEXT = {
+    "schema_version": "1",
+    "cli": {
+        "name": "opensituas",
+        "description": "CLI per il SITUAS (ISTAT). Catalogo report + query territoriali.",
+    },
+    "commands": [
+        {
+            "name": "catalog",
+            "short": "Elenca i report del catalogo SITUAS (pfun, titolo, validità, analisi).",
+            "flags": [
+                {"name": "--ambito", "type": "string", "usage": "Filtra per ambito territoriale"},
+                {"name": "--unita", "type": "string", "usage": "Filtra per unità territoriale"},
+                {"name": "--refresh", "type": "bool", "usage": "Rilegge il catalogo dal gateway"},
+            ],
+            "exit_codes": {"0": "ok", "2": "errore API"},
+        },
+        {
+            "name": "info",
+            "short": "Metadati di un report: descrizione e dettaglio delle colonne.",
+            "flags": [],
+            "exit_codes": {"0": "ok", "2": "errore API o pfun non trovato"},
+        },
+        {
+            "name": "get",
+            "short": "Scarica i dati di un report. Default report DATA: dato più recente (fine validità).",
+            "flags": [
+                {"name": "--date", "type": "string", "usage": "Data DD/MM/YYYY (report DATA)"},
+                {"name": "--from", "type": "string", "usage": "Data inizio DD/MM/YYYY (report PERIODO)"},
+                {"name": "--to", "type": "string", "usage": "Data fine DD/MM/YYYY (report PERIODO)"},
+                {"name": "--out", "type": "path", "usage": "Salva su file (formato secondo --output)"},
+            ],
+            "exit_codes": {"0": "ok", "2": "errore API, pfun non trovato o data fuori validità"},
+        },
+        {
+            "name": "count",
+            "short": "Numero di righe di un report senza scaricarle.",
+            "flags": [
+                {"name": "--date", "type": "string", "usage": "Data DD/MM/YYYY (report DATA)"},
+                {"name": "--from", "type": "string", "usage": "Data inizio DD/MM/YYYY (report PERIODO)"},
+                {"name": "--to", "type": "string", "usage": "Data fine DD/MM/YYYY (report PERIODO)"},
+            ],
+            "exit_codes": {"0": "ok", "2": "errore API o data fuori validità"},
+        },
+        {
+            "name": "storia",
+            "short": "Storia delle variazioni di un'unità territoriale (comune/provincia/regione).",
+            "flags": [
+                {"name": "--dettaglio", "type": "bool", "usage": "Aggiunge provvedimento e unità coinvolte"},
+            ],
+            "exit_codes": {"0": "ok", "2": "unità non trovata o ambigua"},
+        },
+        {
+            "name": "cerca-codice",
+            "short": "Ricerca codice Istat: codici, denominazioni e periodi di validità.",
+            "flags": [
+                {"name": "--limit", "type": "int", "usage": "Max corrispondenze da dettagliare (default 20)"},
+            ],
+            "exit_codes": {"0": "ok", "2": "errore API"},
+        },
+        {
+            "name": "which",
+            "short": "Discovery semantica: trova report SITUAS da una query in linguaggio naturale.",
+            "flags": [
+                {"name": "--limit", "type": "int", "usage": "Max risultati (default 3)"},
+            ],
+            "exit_codes": {"0": "almeno un match trovato", "2": "nessun report corrisponde alla query"},
+        },
+        {
+            "name": "agent-context",
+            "short": "Emette questo JSON versionato per l'auto-orientamento degli agenti AI.",
+            "flags": [],
+            "exit_codes": {"0": "ok"},
+        },
+    ],
+}
 
 app = typer.Typer(
     help="opensituas — CLI per il SITUAS (ISTAT). Catalogo report + query territoriali.",
@@ -269,6 +349,88 @@ def cerca_codice_cmd(
         return territorial.cerca_codice(tipo, query, limit=limit)
 
     output.emit(_run(go), title=f"Ricerca codice {tipo}: {query}")
+
+
+# ------------------------------------------------------------------ agent / discovery
+
+
+@app.command("agent-context")
+def agent_context_cmd() -> None:
+    """Emette un JSON versionato con schema CLI per l'auto-orientamento degli agenti AI."""
+    import sys
+
+    sys.stdout.write(json.dumps(_AGENT_CONTEXT, ensure_ascii=False, indent=2) + "\n")
+
+
+def _which_search(query: str, items: list[dict], limit: int) -> list[dict]:
+    """Cerca report per token della query su titolo/ambito/unità. Ordina per rilevanza."""
+    tokens = [t.lower() for t in query.split() if t]
+    results = []
+    for entry in items:
+        haystack = " ".join([
+            entry.get("Titolo report", ""),
+            entry.get("Ambito territoriale", ""),
+            entry.get("Unità territoriale", ""),
+        ]).lower()
+        score = sum(1 for t in tokens if t in haystack)
+        if score > 0:
+            results.append((score, entry))
+    results.sort(key=lambda x: x[0], reverse=True)
+    return [e for _, e in results[:limit]]
+
+
+def _comando_suggerito(entry: dict) -> str:
+    """Restituisce il comando opensituas suggerito con date di default per il report."""
+    pfun = entry.get("Id report", "?")
+    if catalog.is_range(entry):
+        val = entry.get("Inizio/fine validità report", "")
+        parts = val.split(" - ") if " - " in val else ["", ""]
+        date_from = parts[0].strip() or "DD/MM/YYYY"
+        date_to = parts[1].strip() or "DD/MM/YYYY"
+        return f"opensituas get {pfun} --from {date_from} --to {date_to}"
+    else:
+        default = catalog.validity_end(entry) or "DD/MM/YYYY"
+        return f"opensituas get {pfun} --date {default}"
+
+
+@app.command(
+    "which",
+    epilog=(
+        "Senza argomento elenca tutti i report con il comando suggerito.\n\n"
+        "Exit code `2` = nessun report corrisponde alla query.\n\n"
+        "**Esempi:**\n\n"
+        "* `opensituas which 'comuni per anno'`\n\n"
+        "* `opensituas which --limit 1 province`\n\n"
+        "* `opensituas -o json which 'province cessate'`"
+    ),
+)
+def which_cmd(
+    query: Optional[str] = typer.Argument(None, help="Query in linguaggio naturale (es. 'comuni per anno')"),
+    limit: int = typer.Option(3, "--limit", help="Max risultati (default 3)"),
+) -> None:
+    """Trova report SITUAS da una query in linguaggio naturale. Exit 2 se nessun match."""
+
+    def go():
+        items = catalog.load_catalog()
+        if query:
+            matched = _which_search(query, items, limit)
+            if not matched:
+                raise base.SituasError(f"Nessun report corrisponde a '{query}'")
+        else:
+            matched = items
+        return [
+            {
+                "pfun": e.get("Id report"),
+                "titolo": e.get("Titolo report"),
+                "analisi": e.get("Analisi temporale"),
+                "ambito": e.get("Ambito territoriale"),
+                "unità": e.get("Unità territoriale"),
+                "comando_suggerito": _comando_suggerito(e),
+            }
+            for e in matched
+        ]
+
+    output.emit(_run(go), title="Report SITUAS" + (f" per '{query}'" if query else ""))
 
 
 def main() -> None:

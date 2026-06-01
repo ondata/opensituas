@@ -1,7 +1,12 @@
 LOG
 
-## 2026-06-01
+## 2026-06-01 — v0.1.1
 
+- Aggiunti comandi `agent-context` e `which` per l'auto-orientamento degli agenti AI.
+  `agent-context` emette un JSON versionato (`schema_version`, `cli`, `commands` con
+  flag e exit code contract) senza chiamate di rete. `which <query>` cerca report SITUAS
+  per token su titolo/ambito/unità e restituisce `comando_suggerito` con date di default;
+  exit 2 se nessun match. 11 nuovi test verdi; ruff pulito.
 - Release 0.1.0 su PyPI. `pyproject.toml` allineato a opensdmx: aggiunti `authors`,
   `keywords`, `classifiers`, gruppo `dev` (pytest, ruff), `[tool.ruff.lint]`, pin
   `uv_build`. Aggiunti `LICENSE` (MIT) e `docs/release.md`. Fix ruff `F841` (variabile

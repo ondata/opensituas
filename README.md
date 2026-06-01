@@ -45,6 +45,12 @@ opensituas storia comune 058091 --dettaglio # + provvedimento e unità coinvolte
 opensituas storia regione Lazio
 opensituas storia provincia Roma
 opensituas cerca-codice comune Roma         # codici/denominazioni + validità
+
+# --- per agenti AI ---
+opensituas agent-context                    # JSON versionato: schema CLI (comandi, flag, exit code)
+opensituas which "comuni per anno"          # trova report SITUAS da linguaggio naturale
+opensituas which --limit 1 province        # max 1 risultato; exit 2 se nessun match
+opensituas -o json which "province cessate" | jq '.[].comando_suggerito'
 ```
 
 ## Output per agenti
