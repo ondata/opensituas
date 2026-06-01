@@ -135,7 +135,6 @@ def _event_key(row: dict) -> tuple:
 
 
 def _fetch_rs(unit_type: str, unit: dict) -> list[dict]:
-    cfg = _cfg(unit_type)
     code, name, tipo = quote(unit["code"]), quote(unit["name"]), unit["tipo"]
     if unit_type == "comune":
         service = f"var_get_ua_comuni_lov_rs?procom={code}&com={name}"

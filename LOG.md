@@ -2,6 +2,10 @@ LOG
 
 ## 2026-06-01
 
+- Release 0.1.0 su PyPI. `pyproject.toml` allineato a opensdmx: aggiunti `authors`,
+  `keywords`, `classifiers`, gruppo `dev` (pytest, ruff), `[tool.ruff.lint]`, pin
+  `uv_build`. Aggiunti `LICENSE` (MIT) e `docs/release.md`. Fix ruff `F841` (variabile
+  `cfg` non usata in `territorial.py`). Repo reso pubblico. 18 test verdi, ruff pulito.
 - Simulazione uso giornalistico: testati end-to-end tutti i comandi con chiamate API reali.
 - Fix comportamento data di default: per i report `DATA`, `get`/`count` senza `--date`
   ora usano la **fine** validità (dato più recente), non l'inizio. Prima `count 61` dava i
