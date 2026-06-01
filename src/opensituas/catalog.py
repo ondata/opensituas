@@ -86,15 +86,27 @@ def is_range(entry: dict) -> bool:
     return "pdatada" in entry.get("parametri necessari", "")
 
 
+def validity_end(entry: dict) -> str | None:
+    """Data di fine validità (DD/MM/YYYY) dal campo catalogo, o None se assente."""
+    val = entry.get("Inizio/fine validità report", "")
+    if " - " in val:
+        return val.split(" - ", 1)[1].strip() or None
+    return None
+
+
 def apply_date(
     link: str,
     date: str | None = None,
     date_from: str | None = None,
     date_to: str | None = None,
+    default_date: str | None = None,
 ) -> str:
     """Sostituisce nel link SOLO i parametri data (`pdata` o `pdatada`/`pdataa`).
 
-    Il resto del link (pre-validato dal catalogo) resta intatto. Solleva errore se si
+    Il resto del link (pre-validato dal catalogo) resta intatto. Per i report a data
+    singola (DATA), se non si passa ``date`` viene usata ``default_date`` (di norma la
+    fine validità, cioè il dato più recente): i link del catalogo portano invece la data
+    di *inizio* validità, che darebbe lo snapshot più vecchio. Solleva errore se si
     mescola `--date` con `--from/--to` o si usa il pattern sbagliato per il tipo report.
     """
     if date and (date_from or date_to):
@@ -120,6 +132,8 @@ def apply_date(
             )
         if date:
             query["pdata"] = date
+        elif default_date:
+            query["pdata"] = default_date
 
     new_query = urlencode(query, safe="/")
     return urlunsplit((parts.scheme, parts.netloc, parts.path, new_query, parts.fragment))

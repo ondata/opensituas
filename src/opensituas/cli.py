@@ -152,9 +152,11 @@ def info_cmd(pfun: int = typer.Argument(..., help="Id report (campo pfun del cat
 @app.command(
     "get",
     epilog=(
-        "La data deve cadere nella validità mostrata da `catalog` (altrimenti exit 2: "
-        "REPORT NON DISPONIBILE).\n\n"
+        "Senza `--date` i report DATA restituiscono il dato **più recente** (fine "
+        "validità). Per una data storica passa `--date` (dentro la validità mostrata da "
+        "`catalog`, altrimenti exit 2: REPORT NON DISPONIBILE).\n\n"
         "**Esempi:**\n\n"
+        "* `opensituas -o json get 61` (comuni di oggi)\n\n"
         "* `opensituas -o json get 50 --date 12/01/1927`\n\n"
         "* `opensituas -o csv get 98 --from 17/03/1861 --to 31/05/2026 --out comuni.csv`"
     ),
@@ -166,11 +168,14 @@ def get_cmd(
     date_to: Optional[str] = typer.Option(None, "--to", help="Data fine DD/MM/YYYY (report a intervallo, analisi=PERIODO)"),
     out: Optional[Path] = typer.Option(None, "--out", help="Salva su file (formato secondo --output)"),
 ) -> None:
-    """Scarica i dati di un report. Default: data valida dal catalogo; override con --date / --from/--to."""
+    """Scarica i dati di un report. Default report DATA: dato più recente (fine validità); override con --date / --from/--to."""
 
     def go():
         entry = catalog.get_entry(pfun)
-        link = catalog.apply_date(entry["SPOOL_LINK"], date, date_from, date_to)
+        link = catalog.apply_date(
+            entry["SPOOL_LINK"], date, date_from, date_to,
+            default_date=catalog.validity_end(entry),
+        )
         return base.rows(base.publish_get(link, timeout=_timeout()))
 
     rows = _run(go)
@@ -191,7 +196,11 @@ def get_cmd(
 
 @app.command(
     "count",
-    epilog="**Esempio:** `opensituas -o json count 50 --date 12/01/1927 | jq '.[0].NUM_ROWS'`",
+    epilog=(
+        "Senza `--date` i report DATA contano alla **fine validità** (dato più recente); "
+        "passa `--date` per una data storica.\n\n"
+        "**Esempio:** `opensituas -o json count 61 | jq '.[0].NUM_ROWS'`"
+    ),
 )
 def count_cmd(
     pfun: int = typer.Argument(..., help="Id report"),
@@ -199,11 +208,14 @@ def count_cmd(
     date_from: Optional[str] = typer.Option(None, "--from"),
     date_to: Optional[str] = typer.Option(None, "--to"),
 ) -> None:
-    """Numero di righe di un report (senza scaricarle)."""
+    """Numero di righe di un report (senza scaricarle). Default report DATA: dato più recente (fine validità)."""
 
     def go():
         entry = catalog.get_entry(pfun)
-        link = catalog.apply_date(entry["COUNT_LINK"], date, date_from, date_to)
+        link = catalog.apply_date(
+            entry["COUNT_LINK"], date, date_from, date_to,
+            default_date=catalog.validity_end(entry),
+        )
         return base.rows(base.publish_get(link, timeout=_timeout()))
 
     output.emit(_run(go), title=f"Conteggio report {pfun}")

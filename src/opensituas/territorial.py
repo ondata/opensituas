@@ -204,16 +204,24 @@ def cerca_codice(unit_type: str, query: str, limit: int = 20) -> list[dict]:
     matches = exact or [r for r in lov if q in str(r.get("V", "")).lower()]
     if not matches:
         raise base.SituasError(f"Nessun codice per '{query}' (tipo {unit_type})")
-    if len(matches) > limit:
-        return [{"_ambiguo": f"{len(matches)} corrispondenze, mostro le prime {limit}"}] + [
+    # La LOV può ripetere lo stesso RC su più voci (codici diversi che condividono il
+    # criterio di ricerca): dedup per RC, così non interroghi due volte lo stesso
+    # dettaglio né duplichi i record (es. "Samone" → 4 voci ma 2 RC).
+    seen_rc: set = set()
+    rc_codes = []
+    for m in matches:
+        rc = m.get("RC")
+        if rc not in seen_rc:
+            seen_rc.add(rc)
+            rc_codes.append(rc)
+    if len(rc_codes) > limit:
+        return [{"_ambiguo": f"{len(rc_codes)} corrispondenze, mostro le prime {limit}"}] + [
             {"V": m.get("V")} for m in matches[:limit]
         ]
     results: list[dict] = []
-    for m in matches:
+    for rc in rc_codes:
         res = base.rows(
-            base.gateway(
-                f"ricercacodice_criterio_res?haRuolo&ptipounit={ptipo}&prc={m['RC']}"
-            )
+            base.gateway(f"ricercacodice_criterio_res?haRuolo&ptipounit={ptipo}&prc={rc}")
         )
         results.extend(res)
     return results

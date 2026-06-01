@@ -50,6 +50,30 @@ def test_apply_date_override_single():
     assert "pfun=42" in out
 
 
+def test_apply_date_default_date_used_for_single():
+    # senza --date i report DATA devono usare la fine validità (dato più recente),
+    # non la data di inizio pre-impostata nel link del catalogo
+    out = catalog.apply_date(SPOOL, default_date="31/05/2026")
+    assert "pdata=31/05/2026" in out
+
+
+def test_apply_date_explicit_wins_over_default():
+    out = catalog.apply_date(SPOOL, date="01/01/2000", default_date="31/05/2026")
+    assert "pdata=01/01/2000" in out
+
+
+def test_apply_date_default_date_ignored_for_range():
+    # i report PERIODO non hanno pdata: default_date non deve introdurlo
+    out = catalog.apply_date(RANGE, default_date="31/05/2026")
+    assert "pdata=" not in out
+
+
+def test_validity_end():
+    entry = {"Inizio/fine validità report": "01/01/1948 - 31/05/2026"}
+    assert catalog.validity_end(entry) == "31/05/2026"
+    assert catalog.validity_end({}) is None
+
+
 def test_apply_date_range_override():
     out = catalog.apply_date(RANGE, date_from="01/01/1900", date_to="31/12/1999")
     assert "pdatada=01/01/1900" in out and "pdataa=31/12/1999" in out

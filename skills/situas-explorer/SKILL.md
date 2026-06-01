@@ -34,13 +34,16 @@ opensituas -o json info 50 | jq '{report, colonne: [.colonne[].colonna]}'
 
 ## Fase 3 — Scarica i dati
 
-La data di default è quella valida pre-impostata nel catalogo. Per cambiarla:
+Per i report `DATA` (snapshot a una data), senza `--date` ottieni il dato **più
+recente**: la CLI usa la **fine validità** mostrata in `catalog`. Per una data storica
+passa `--date`. (Nota: i link del catalogo portano la data di *inizio* validità; la CLI la
+sostituisce di default con la fine, altrimenti otterresti lo snapshot più vecchio.)
 
 ```bash
-opensituas -o json get 50                       # data valida di default
-opensituas -o json get 50 --date 12/01/1927     # report DATA: --date DD/MM/YYYY
+opensituas -o json get 61                       # comuni di OGGI (fine validità)
+opensituas -o json get 61 --date 01/01/2000     # report DATA storico: --date DD/MM/YYYY
 opensituas -o json count 98 --from 17/03/1861 --to 31/05/2026   # report PERIODO
-opensituas -o csv  get 50 --out comuni.csv       # salva su file
+opensituas -o csv  get 61 --out comuni.csv       # salva su file
 ```
 
 Se la data è fuori dalla finestra di validità, il comando esce con codice 2 e messaggio

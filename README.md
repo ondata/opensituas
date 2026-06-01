@@ -32,10 +32,10 @@ opensituas --output json catalog "Ripartizioni" | jq '.[].pfun'
 opensituas catalog --refresh                # rilegge dal gateway
 
 opensituas info 50                          # descrizione + colonne del report 50
-opensituas get 42                           # dati (data valida dal catalogo)
-opensituas get 50 --output csv --out comuni.csv
+opensituas get 61                           # report DATA: dato più recente (fine validità)
+opensituas get 61 --output csv --out comuni.csv
 opensituas count 98 --from 17/03/1861 --to 31/05/2026
-opensituas get 42 --date 01/01/2020         # errore chiaro se fuori validità
+opensituas get 61 --date 01/01/2020         # snapshot storico; errore chiaro se fuori validità
 
 # --- query territoriali ---
 opensituas storia comune Roma               # storia delle variazioni del comune
@@ -60,8 +60,10 @@ opensituas -o csv get 50 > comuni.csv
 - **Catalogo**: ottenuto via gateway POST (`get_elenco_microservizi`), cachato in
   `~/.cache/opensituas/catalog.json` (TTL 7 giorni), con snapshot incluso come fallback.
 - **Dati report**: endpoint pubblici `situas-servizi.istat.it/publish` (`reportspooljson`,
-  `reportspooljsoncount`, `anagrafica_report_metadato_web`). La data si prende dai link
-  pre-validati del catalogo; `--date`/`--from`/`--to` sostituiscono solo il parametro.
+  `reportspooljsoncount`, `anagrafica_report_metadato_web`). Per i report `DATA`, senza
+  `--date` la CLI usa la **fine validità** (dato più recente); i link del catalogo
+  porterebbero invece la data di *inizio* (snapshot più vecchio). `--date`/`--from`/`--to`
+  sostituiscono il parametro data.
 - **Query territoriali**: servizi `var_get_ua_*` (storia) e `ricercacodice_*` via gateway.
 
 Dettagli in [docs/architecture.md](docs/architecture.md). Per orchestrazione da agente vedi

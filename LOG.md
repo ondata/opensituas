@@ -1,5 +1,19 @@
 LOG
 
+## 2026-06-01
+
+- Simulazione uso giornalistico: testati end-to-end tutti i comandi con chiamate API reali.
+- Fix comportamento data di default: per i report `DATA`, `get`/`count` senza `--date`
+  ora usano la **fine** validità (dato più recente), non l'inizio. Prima `count 61` dava i
+  comuni del 1948 (7688) invece di oggi (7894). Aggiunte `catalog.validity_end()` e
+  parametro `default_date` ad `apply_date`. Help di `get`/`count`, SKILL e README aggiornati.
+- Fix `cerca-codice`: per gli omonimi (es. Samone) la LOV ripete lo stesso `RC` su più
+  voci; il tool iterava per match e duplicava i record (Samone 12 invece di 6) con chiamate
+  di rete ridondanti. Ora deduplica per `RC`: record corretti e metà richieste.
+- `docs/tutorial-giornalisti.md`: 5 casi d'uso verificati (serie storica comuni, fusioni e
+  cambi nome via `storia`, province soppresse, `cerca-codice`/omonimi, export CSV).
+- Test: pytest non era nel venv; reinstallato. Suite da 14 → 18 verdi (4 nuovi su default_date).
+
 ## 2026-05-31
 
 - Help ottimizzato per agenti: `--output` come enum (`table|json|csv`, validato), epilog
