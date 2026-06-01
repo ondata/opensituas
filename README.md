@@ -1,4 +1,10 @@
-opensituas
+[![PyPI version](https://img.shields.io/pypi/v/opensdmx)](https://pypi.org/project/opensituas/)
+[![GitHub](https://img.shields.io/badge/github-ondata%2Fopensdmx-blue?logo=github)](https://github.com/aborruso/opensituas)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/aborruso/opensituas)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Newsletter](https://img.shields.io/badge/newsletter-ondata-FF6719?logo=substack)](https://ondata.substack.com/)
+
+# opensituas
 
 CLI per il **SITUAS** — Sistema Informativo Territoriale delle Unità Amministrative e
 Statistiche (ISTAT) — progettata per essere orchestrata da un agente AI: output
