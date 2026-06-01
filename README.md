@@ -1,4 +1,4 @@
-[![PyPI version](https://img.shields.io/pypi/v/opensdmx)](https://pypi.org/project/opensituas/)
+[![PyPI version](https://img.shields.io/pypi/v/opensituas)](https://pypi.org/project/opensituas/)
 [![GitHub](https://img.shields.io/badge/github-aborruso%2Fopensituas-blue?logo=github)](https://github.com/aborruso/opensituas)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/aborruso/opensituas)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
