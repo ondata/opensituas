@@ -198,6 +198,12 @@ Dettagli in [docs/architecture.md](docs/architecture.md). Per orchestrazione da 
 |---|---|---|
 | `OPENSITUAS_TIMEOUT` | `60` | Timeout richieste (secondi) |
 
+## Altri tool
+
+- **[opensdmx](https://github.com/ondata/opensdmx)** — Statistiche ufficiali da Eurostat, ISTAT, OCSE e altri provider SDMX, senza allucinazioni.
+- **[ISTAT MCP Server](https://github.com/ondata/istat_mcp_server)** — Dati statistici ISTAT direttamente nel tuo assistente AI, via protocollo MCP.
+- **[CKAN MCP Server](https://github.com/ondata/ckan-mcp-server)** — Qualsiasi portale open data CKAN diventa una conversazione in linguaggio naturale.
+
 ## Licenza
 
 MIT
