@@ -44,6 +44,8 @@ Claude Code, che guida l'agente nel discovery del catalogo e nei casi d'uso più
 npx skills add ondata/opensituas
 ```
 
+Per i dettagli sull'installazione della skill vedi [docs/skill/README.md](docs/skill/README.md).
+
 ## Comandi
 
 ```bash
