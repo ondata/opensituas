@@ -1001,7 +1001,7 @@
   /* Toggle terminale collassabile */
   function toggleCmd(id) {
     const el = document.getElementById(id);
-    const btn = el.previousElementSibling;
+    const btn = el.previousElementSibling.querySelector('.cmd-toggle');
     const isOpen = el.classList.contains('show');
     el.classList.toggle('show', !isOpen);
     btn.setAttribute('aria-expanded', String(!isOpen));
