@@ -107,6 +107,10 @@
       padding: .15rem .5rem; border-radius: 99px;
       font-family: monospace; white-space: nowrap;
     }
+    @media (max-width: 575px) {
+      .demo-card .card-subject { flex-wrap: wrap; }
+      .demo-card .card-subject .pfun-badge { margin-left: 0; white-space: normal; word-break: break-word; }
+    }
     .demo-card .card-subject.subject-green  { background: #198754; }
     .demo-card .card-subject.subject-purple { background: #6f42c1; }
     .demo-card .card-subject.subject-orange { background: var(--ondata-orange); }
