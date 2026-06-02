@@ -1,5 +1,19 @@
 LOG
 
+## 2026-06-02 — v0.1.2
+
+- Fix `info`: l'endpoint `INFO_LINK` nel catalogo porta `pdata=<inizio validità>` e
+  l'API restituiva i metadati dell'epoca, non quelli attuali. Per pfun 74 (`Comuni -
+  Dimensione`) mancavano `AREA_KMQ`, `POP_RES`, `ANNO_POP_RES`, `COD_PROV_STORICO`.
+  Fix: `info_cmd` applica ora `apply_date(..., default_date=validity_end(entry))`
+  sull'`INFO_LINK`, come già faceva `get_cmd` per lo `SPOOL_LINK`. 15 colonne restituite
+  invece di 10 per pfun 74.
+- Skill `situas-explorer` arricchita: Fase 2 con snippet jq per nome/tipo/descrizione
+  campi; sette casi d'uso per giornalisti e analisti (master table codici, normalizzazione
+  comune, aree interne e policy, storia variazioni, traslazione codici tra date, SLL e
+  specializzazione produttiva, Cities/FUA/NUTS3 europei).
+- README: aggiunta sezione "Casi d'uso" con gli stessi sette scenari e comandi copiabili.
+
 ## 2026-06-01 — v0.1.1
 
 - Aggiunti comandi `agent-context` e `which` per l'auto-orientamento degli agenti AI.

@@ -53,6 +53,99 @@ opensituas which --limit 1 province        # max 1 risultato; exit 2 se nessun m
 opensituas -o json which "province cessate" | jq '.[].comando_suggerito'
 ```
 
+## Casi d'uso
+
+### Codici ufficiali Istat — la master table per i join
+
+Il punto di partenza di qualsiasi analisi che usa dati pubblici italiani. Il report 61 è
+una riga per comune con tutti i livelli gerarchici (ripartizione, regione, provincia, comune)
+e le denominazioni ufficiali. Chiave di join universale: `PRO_COM_T` (6 caratteri
+alfanumerici, es. `015146`).
+
+```bash
+opensituas -o csv get 61 --out comuni.csv              # snapshot corrente
+opensituas -o csv get 61 --date 01/01/2000 --out comuni_2000.csv
+```
+
+### Popolazione, superficie e caratteristiche per comune
+
+Due report complementari per normalizzare qualsiasi dataset comunale.
+
+```bash
+opensituas -o csv get 74 --out comuni_dim.csv     # POP_LEG, POP_RES, AREA_KMQ, anno riferimento
+opensituas -o csv get 73 --out comuni_car.csv     # COM_LIT (litoraneo), COM_ISO (isolano), ZONA_ALT
+```
+
+`ZONA_ALT`: 1=Montagna interna · 2=Montagna litoranea · 3=Collina interna · 4=Collina
+litoranea · 5=Pianura. Join via `PRO_COM_T`.
+
+### Aree interne, montagna e zone di svantaggio
+
+Fondamentale per giornalismo sui piccoli comuni, divario territoriale, accesso ai servizi.
+
+```bash
+opensituas -o csv get 75 --out comuni_policy.csv
+```
+
+Campi chiave: `AREE_INT_2020` (Polo → Polo intercomunale → Cintura → Intermedio →
+Periferico → Ultraperiferico), `MACRO_AI_2020` (due classi: interno/non interno),
+`ZONE_MONTANE_2014`, `ZONE_V_NAT_2020` (vincoli naturali), `ZONE_S_SPECIFICI_2014`.
+
+### La storia di un comune — fusioni, rinominazioni, soppressioni
+
+```bash
+opensituas storia comune "Ledro" --dettaglio       # nato da fusione: chi, quando, perché
+opensituas storia comune "Sesto San Giovanni"
+# Tutte le variazioni dal 1991 a oggi con testo del provvedimento:
+opensituas -o csv get 129 --out variazioni_1991.csv
+# Solo cambi di denominazione, dall'Unità d'Italia:
+opensituas -o json get 104 --from 17/03/1861 --to 31/05/2026 | jq '.[].COMUNE'
+```
+
+Il report 129 (`Variazioni amministrative e territoriali dal 1991`) è il più ricco:
+`DESC_COD_VARIAZIONE` descrive il tipo (fusione, scorporo, cambio nome, cambio codice...),
+`TESTO_PROVVEDIMENTO` riporta la norma di riferimento.
+
+### Confrontare dati storici — traslazione codici tra due date
+
+Indispensabile quando si confrontano dataset di anni diversi: le fusioni cambiano i codici.
+
+```bash
+# Mapping codici comuni: come erano nel 2001, come sono oggi
+opensituas -o csv get 99 --from 21/10/2001 --to 31/12/2024 --out mapping_2001_2024.csv
+# Affiancamento completo: chi c'era nel 2011 e nel 2021 (con eventuali blank per nuovi/soppressi)
+opensituas -o csv get 298 --from 01/01/2011 --to 01/01/2021 --out confronto_2011_2021.csv
+```
+
+### Sistemi Locali del Lavoro e specializzazione produttiva
+
+I SLL raggruppano comuni per bacino di pendolarismo — l'unità di analisi del mercato del
+lavoro locale. Il report delle tassonomie ha anche la specializzazione produttiva del SLL.
+
+```bash
+opensituas -o csv get 408 --out sll_composizione.csv   # quali comuni appartengono a ogni SLL
+opensituas -o csv get 444 --out sll_tassonomie.csv     # CL_DIM, CLASSE_2021_NAME, GRUPPO_2021_NAME
+```
+
+`CLASSE_2021_NAME` / `GRUPPO_2021_NAME`: specializzazione produttiva (es. distretto
+manifatturiero, turismo, servizi). Utile per confronti tra aree economicamente simili.
+
+### Cities, FUA e NUTS — classificazioni geografiche europee
+
+Per analisi comparate con dati EUROSTAT o europei in genere.
+
+```bash
+opensituas -o csv get 414 --out cities_2021.csv      # comuni nelle "Cities" (definizione EUROSTAT)
+opensituas -o csv get 446 --out fua_2021.csv         # comuni nelle Zone Urbane Funzionali 2021
+opensituas -o csv get 449 --out nuts3.csv            # POP_RES, AREA_KMQ, urban/rural, costiero, confine
+```
+
+Il report 449 (`NUTS 3 - Dimensione e classificazioni`) include `COD_URBAN_RURAL` (tipologia
+urbano-rurale a livello provinciale), `COD_COASTAL` e `COD_BORDER_REGION` — le classificazioni
+standardizzate EUROSTAT per i confronti tra paesi.
+
+---
+
 ## Output per agenti
 
 Il flag globale `--output` (`-o`) vale `table` (default), `json` o `csv`. In `json`/`csv`
