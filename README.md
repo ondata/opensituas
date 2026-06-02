@@ -38,7 +38,7 @@ uv tool install opensituas
 ```
 
 **Nota bene:** `opensituas` funziona ancora meglio accoppiato alla skill dedicata per
-Claude Code, che guida l'agente nel discovery del catalogo e nei casi d'uso più comuni:
+qualsiasi agente AI che supporti le skill, che guida l'agente nel discovery del catalogo e nei casi d'uso più comuni:
 
 ```bash
 npx skills add ondata/opensituas
