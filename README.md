@@ -8,7 +8,7 @@
 
 Qualsiasi analisi geografica sull'Italia parte da qui.
 
-Il **SITUAS** (ISTAT) è la fonte autoritativa dei codici e delle denominazioni ufficiali
+Il **[SITUAS](https://situas.istat.it/)** (ISTAT) è la fonte autoritativa dei codici e delle denominazioni ufficiali
 di tutte le unità territoriali italiane — dall'Unità d'Italia a oggi. Contiene la
 storia di ogni fusione, ridenominazione e soppressione di comuni, province e regioni.
 `opensituas` lo espone come CLI orchestrabile, con output `table`/`json`/`csv` pronto
