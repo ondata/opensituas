@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d6efd"/>
+      <stop offset="60%" style="stop-color:#0a4db5"/>
+      <stop offset="100%" style="stop-color:#083d8c"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.12)"/>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.06)"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="1080" cy="80" r="180" fill="rgba(255,255,255,0.04)"/>
+  <circle cx="1120" cy="560" r="120" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="80" cy="520" r="90" fill="rgba(255,255,255,0.03)"/>
+
+  <!-- Orange accent bar -->
+  <rect x="80" y="80" width="6" height="80" rx="3" fill="#FF6719"/>
+
+  <!-- Main title -->
+  <text x="108" y="128" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="700" fill="white">opensituas</text>
+  <text x="108" y="178" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="400" fill="rgba(255,255,255,0.75)">Demo interattiva — Caso d'uso sul Comune di Messina</text>
+
+  <!-- Divider -->
+  <line x1="80" y1="210" x2="1120" y2="210" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+
+  <!-- Stat cards -->
+  <!-- Card 1: Population -->
+  <rect x="80" y="240" width="240" height="120" rx="12" fill="url(#card)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <text x="100" y="272" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="rgba(255,255,255,0.55)" letter-spacing="1.5">POPOLAZIONE</text>
+  <text x="100" y="318" font-family="system-ui, sans-serif" font-size="38" font-weight="700" fill="white">217.033</text>
+  <text x="100" y="345" font-family="system-ui, sans-serif" font-size="13" fill="rgba(255,255,255,0.5)">residenti (2024)</text>
+
+  <!-- Card 2: Surface -->
+  <rect x="340" y="240" width="240" height="120" rx="12" fill="url(#card)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <text x="360" y="272" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="rgba(255,255,255,0.55)" letter-spacing="1.5">SUPERFICIE</text>
+  <text x="360" y="318" font-family="system-ui, sans-serif" font-size="38" font-weight="700" fill="white">213 km²</text>
+  <text x="360" y="345" font-family="system-ui, sans-serif" font-size="13" fill="rgba(255,255,255,0.5)">territorio comunale</text>
+
+  <!-- Card 3: SLL -->
+  <rect x="600" y="240" width="240" height="120" rx="12" fill="url(#card)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <text x="620" y="272" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="rgba(255,255,255,0.55)" letter-spacing="1.5">NUTS3</text>
+  <text x="620" y="318" font-family="system-ui, sans-serif" font-size="38" font-weight="700" fill="white">ITG13</text>
+  <text x="620" y="345" font-family="system-ui, sans-serif" font-size="13" fill="rgba(255,255,255,0.5)">codice europeo</text>
+
+  <!-- Card 4: ISTAT code -->
+  <rect x="860" y="240" width="240" height="120" rx="12" fill="url(#card)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <text x="880" y="272" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="rgba(255,255,255,0.55)" letter-spacing="1.5">CODICE ISTAT</text>
+  <text x="880" y="318" font-family="system-ui, sans-serif" font-size="38" font-weight="700" fill="white">083048</text>
+  <text x="880" y="345" font-family="system-ui, sans-serif" font-size="13" fill="rgba(255,255,255,0.5)">PRO_COM_T</text>
+
+  <!-- Command example -->
+  <rect x="80" y="390" width="700" height="56" rx="8" fill="rgba(0,0,0,0.3)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="104" y="423" font-family="'Courier New', monospace" font-size="18" fill="#4CAF50">$</text>
+  <text x="124" y="423" font-family="'Courier New', monospace" font-size="18" fill="#FFD54F">opensituas</text>
+  <text x="266" y="423" font-family="'Courier New', monospace" font-size="18" fill="white">cerca-codice comune Messina</text>
+
+  <!-- Badge: Polo di attrazione -->
+  <rect x="80" y="468" width="190" height="34" rx="6" fill="rgba(255,103,25,0.25)" stroke="#FF6719" stroke-width="1"/>
+  <text x="100" y="490" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#FF6719">A — Polo di attrazione</text>
+
+  <!-- Badge: Litoraneo -->
+  <rect x="284" y="468" width="130" height="34" rx="6" fill="rgba(13,110,253,0.25)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="304" y="490" font-family="system-ui, sans-serif" font-size="14" fill="rgba(255,255,255,0.85)">Litoraneo</text>
+
+  <!-- Badge: Città densa -->
+  <rect x="428" y="468" width="140" height="34" rx="6" fill="rgba(13,110,253,0.25)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="448" y="490" font-family="system-ui, sans-serif" font-size="14" fill="rgba(255,255,255,0.85)">Città densa</text>
+
+  <!-- Footer -->
+  <text x="80" y="585" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="rgba(255,255,255,0.5)">github.com/ondata/opensituas</text>
+  <text x="1120" y="585" font-family="system-ui, sans-serif" font-size="16" fill="rgba(255,255,255,0.4)" text-anchor="end">ondata · MIT</text>
+</svg>
