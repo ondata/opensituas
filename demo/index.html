@@ -16,7 +16,6 @@
 
     body { font-family: 'Segoe UI', system-ui, sans-serif; }
 
-    /* Navbar */
     .navbar-brand .badge-ondata {
       background: var(--ondata-orange);
       font-size: .65rem;
@@ -46,6 +45,22 @@
     .hero .install-box .copy-icon { opacity: .7; font-size: .85rem; }
     .hero .install-box:hover .copy-icon { opacity: 1; }
 
+    /* Story hook cards */
+    .story-card {
+      border-left: 4px solid var(--ondata-orange);
+      transition: box-shadow .2s, transform .15s;
+    }
+    .story-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,.1);
+      transform: translateY(-2px);
+    }
+    .story-card .story-headline {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #212529;
+      line-height: 1.35;
+    }
+
     /* Workflow steps */
     .step-arrow {
       font-size: 1.5rem;
@@ -60,6 +75,24 @@
       letter-spacing: .1em;
       text-transform: uppercase;
       color: var(--ondata-orange);
+    }
+
+    /* Journalist callout */
+    .journalist-callout {
+      background: var(--ondata-orange-light);
+      border-left: 4px solid var(--ondata-orange);
+      padding: .75rem 1rem;
+      font-size: .88rem;
+      margin-top: 1rem;
+      border-radius: 0 .375rem .375rem 0;
+    }
+    .journalist-callout .callout-label {
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--ondata-orange);
+      margin-bottom: .2rem;
     }
 
     /* Demo cards (3-zone) */
@@ -80,9 +113,8 @@
       font-family: monospace;
       white-space: nowrap;
     }
-    .demo-card .card-subject.subject-green { background: #198754; }
+    .demo-card .card-subject.subject-green  { background: #198754; }
     .demo-card .card-subject.subject-purple { background: #6f42c1; }
-    .demo-card .card-subject.subject-teal   { background: #0dcaf0; color: #000; }
     .demo-card .card-subject.subject-orange { background: var(--ondata-orange); }
 
     .demo-card .card-terminal {
@@ -107,12 +139,7 @@
       border-left: 4px solid var(--ondata-orange);
       background: white;
     }
-    .stat-card .stat-value {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #0d6efd;
-      line-height: 1.1;
-    }
+    .stat-card .stat-value { font-size: 1.8rem; font-weight: 700; color: #0d6efd; line-height: 1.1; }
     .stat-card .stat-label { font-size: .8rem; color: #6c757d; text-transform: uppercase; letter-spacing: .05em; }
     .stat-card .stat-year  { font-size: .7rem; color: #adb5bd; }
 
@@ -121,33 +148,31 @@
     .timeline::before {
       content: '';
       position: absolute;
-      left: .9rem;
-      top: 0; bottom: 0;
+      left: .9rem; top: 0; bottom: 0;
       width: 2px;
       background: #dee2e6;
     }
     .timeline-item { position: relative; margin-bottom: 1.75rem; }
     .timeline-dot {
       position: absolute;
-      left: -1.65rem;
-      top: .25rem;
+      left: -1.65rem; top: .25rem;
       width: 1rem; height: 1rem;
       border-radius: 50%;
       border: 2px solid white;
       box-shadow: 0 0 0 2px currentColor;
     }
-    .timeline-dot.dot-pv    { background: #6c757d; color: #6c757d; }
-    .timeline-dot.dot-aq    { background: #0d6efd; color: #0d6efd; }
-    .timeline-dot.dot-aqes  { background: #198754; color: #198754; }
-    .timeline-dot.dot-cecs  { background: #dc3545; color: #dc3545; }
-    .timeline-dot.dot-ce    { background: #fd7e14; color: #fd7e14; }
+    .timeline-dot.dot-pv   { background: #6c757d; color: #6c757d; }
+    .timeline-dot.dot-aq   { background: #0d6efd; color: #0d6efd; }
+    .timeline-dot.dot-aqes { background: #198754; color: #198754; }
+    .timeline-dot.dot-cecs { background: #dc3545; color: #dc3545; }
+    .timeline-dot.dot-ce   { background: #fd7e14; color: #fd7e14; }
 
-    .timeline-date { font-size: .78rem; color: #6c757d; font-variant-numeric: tabular-nums; }
+    .timeline-date  { font-size: .78rem; color: #6c757d; font-variant-numeric: tabular-nums; }
     .timeline-title { font-weight: 600; margin: .1rem 0; }
     .timeline-desc  { font-size: .88rem; color: #495057; }
     .timeline-prov  { font-size: .76rem; color: #868e96; font-family: monospace; margin-top: .3rem; }
 
-    /* Chart section */
+    /* Chart */
     .chart-section { background: #f8f9fa; }
 
     /* Table */
@@ -159,7 +184,7 @@
     footer a { color: #dee2e6; }
     footer a:hover { color: white; }
 
-    /* Copy feedback */
+    /* Copy toast */
     .copy-toast {
       position: fixed; bottom: 1.5rem; right: 1.5rem;
       background: #198754; color: white;
@@ -179,12 +204,10 @@
       <span class="badge badge-ondata ms-1">demo</span>
     </a>
     <div class="d-flex align-items-center gap-2">
-      <a href="https://github.com/ondata/opensituas" target="_blank"
-         class="btn btn-sm btn-outline-light">
+      <a href="https://github.com/ondata/opensituas" target="_blank" class="btn btn-sm btn-outline-light">
         <i class="bi bi-github"></i> GitHub
       </a>
-      <a href="https://pypi.org/project/opensituas/" target="_blank"
-         class="btn btn-sm btn-outline-warning">
+      <a href="https://pypi.org/project/opensituas/" target="_blank" class="btn btn-sm btn-outline-warning">
         <i class="bi bi-box-seam"></i> PyPI
       </a>
     </div>
@@ -195,20 +218,25 @@
 <section class="hero">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-lg-8">
+      <div class="col-lg-9">
         <p class="section-label mb-2" style="color:#ffd580">Demo interattiva</p>
         <h1 class="display-5 fw-bold mb-3">
           Opensituas Demo<br>
           <span style="color:#ffd580">Caso d'uso sul Comune di Messina</span>
         </h1>
-        <p class="lead mb-4" style="opacity:.9">
-          <strong>opensituas</strong> interroga il <strong>SITUAS</strong> (ISTAT) — la fonte
-          autoritativa dei codici e delle denominazioni di tutte le unità territoriali italiane,
-          dall'Unità d'Italia a oggi. Questa demo mostra come estrarre e leggere dati reali
-          usando il Comune di <strong>Messina</strong> come filo conduttore.
+        <p class="lead mb-3" style="opacity:.9">
+          <strong>opensituas</strong> interroga il <strong>SITUAS</strong> (ISTAT) — l'anagrafe ufficiale
+          di tutti i comuni, province e regioni italiani dall'Unità d'Italia a oggi.
+          Con pochi comandi da terminale puoi ottenere codici ufficiali, dati demografici,
+          storia delle variazioni e molto altro — pronti per <strong>spreadsheet, DataWrapper o Flourish</strong>.
+        </p>
+        <p class="mb-4" style="opacity:.8; font-size:.95rem">
+          <i class="bi bi-terminal me-1"></i>
+          Richiede un terminale (Mac, Linux o Windows con WSL) e cinque minuti di installazione.
+          Tutti gli output si possono esportare in <strong>CSV</strong>.
         </p>
         <div class="d-flex flex-wrap gap-3 align-items-center">
-          <span class="install-box" onclick="copyInstall(this)">
+          <span class="install-box" onclick="copyInstall(this)" title="Copia il comando">
             <span style="opacity:.6">$</span>
             <span>uv tool install opensituas</span>
             <i class="bi bi-clipboard copy-icon"></i>
@@ -220,27 +248,76 @@
             <i class="bi bi-newspaper"></i> Tutorial giornalisti
           </a>
         </div>
-      </div>
-      <div class="col-lg-4 mt-4 mt-lg-0 text-center">
-        <div class="bg-white bg-opacity-10 rounded-3 p-3 d-inline-block text-start">
-          <div class="text-warning small fw-bold mb-2"><i class="bi bi-robot"></i> Skill per agenti AI</div>
-          <code style="font-size:.8rem; color:#b8daff">npx skills add ondata/opensituas</code>
-          <div class="text-white-50 mt-2" style="font-size:.75rem">
-            Guida Claude Code nel discovery del catalogo SITUAS<br>
-            e nei casi d'uso più comuni — in linguaggio naturale.
-          </div>
-          <a href="../skills/situas-explorer/SKILL.md"
-             class="btn btn-sm btn-warning mt-2 w-100">
-            <i class="bi bi-lightning-fill"></i> Vedi la Skill
-          </a>
+        <div class="mt-3 d-flex align-items-center gap-2" style="opacity:.75; font-size:.82rem">
+          <i class="bi bi-robot"></i>
+          <span>Usi Claude Code?
+            <a href="../skills/situas-explorer/SKILL.md" style="color:#ffd580">Installa la skill situas-explorer</a>
+            e interroga il SITUAS in linguaggio naturale.
+          </span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- STORIE CHE PUOI RACCONTARE -->
+<section class="py-5 border-bottom bg-white">
+  <div class="container">
+    <p class="section-label mb-1">A cosa serve</p>
+    <h2 class="h4 mb-2">Storie che puoi raccontare</h2>
+    <p class="text-muted mb-4 small">
+      Il SITUAS è la fonte autoritativa ISTAT per la geografia amministrativa italiana.
+      Ecco tre situazioni reali in cui opensituas risolve un problema giornalistico concreto.
+    </p>
+    <div class="row g-3">
+
+      <div class="col-md-4">
+        <div class="card story-card h-100 p-3">
+          <div class="mb-2 text-primary fs-3"><i class="bi bi-signpost-split"></i></div>
+          <div class="story-headline mb-2">
+            "Il comune che seguo si è fuso con un altro. Quando è successo? Con chi? Quale legge lo ha deciso?"
+          </div>
+          <p class="text-muted small mb-0">
+            Il comando <code>storia</code> ricostruisce ogni variazione con data, descrizione
+            e riferimento normativo (Regio Decreto, legge regionale...) — per tutti i 7.894 comuni italiani.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card story-card h-100 p-3">
+          <div class="mb-2 text-success fs-3"><i class="bi bi-table"></i></div>
+          <div class="story-headline mb-2">
+            "Ho dati elettorali per codice comune. Voglio abbinarli ai dati demografici ISTAT ma i codici non combaciano."
+          </div>
+          <p class="text-muted small mb-0">
+            opensituas fornisce il codice ISTAT ufficiale (<code>PRO_COM_T</code>) e il codice catastale
+            (<code>COD_CATASTO</code>) — le due chiavi più usate nei dataset pubblici italiani.
+            Esporta in CSV e unisci in Excel, Google Sheets o DuckDB.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card story-card h-100 p-3">
+          <div class="mb-2 fs-3" style="color:var(--ondata-orange)"><i class="bi bi-graph-down-arrow"></i></div>
+          <div class="story-headline mb-2">
+            "Quante fusioni di comuni ci sono state nella mia regione nell'ultimo decennio? C'è un'accelerazione?"
+          </div>
+          <p class="text-muted small mb-0">
+            Il report delle variazioni dal 1991 (<code>pfun 129</code>) elenca ogni evento con tipo
+            (fusione, scorporo, cambio nome) e norma di riferimento.
+            Una query di due righe con <code>jq</code> ti dà il conteggio per anno e regione.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- WORKFLOW -->
-<section class="py-5 border-bottom">
+<section class="py-5 border-bottom bg-light">
   <div class="container">
     <p class="section-label mb-3">Come funziona</p>
     <h2 class="h4 mb-4">Il flusso di lavoro in 3 passi</h2>
@@ -253,7 +330,7 @@
               <span class="badge bg-primary rounded-pill">1</span>
               <strong>Trova il report</strong>
             </div>
-            <p class="text-muted small mb-2">Sfoglia il catalogo dei 74 microservizi SITUAS e trova il <code>pfun</code> giusto.</p>
+            <p class="text-muted small mb-2">74 microservizi nel catalogo. Trova il <code>pfun</code> giusto per il tuo dato.</p>
             <code class="d-block small bg-light p-2 rounded">opensituas catalog "comuni"<br>opensituas which "popolazione"</code>
           </div>
         </div>
@@ -270,7 +347,7 @@
               <span class="badge bg-success rounded-pill">2</span>
               <strong>Capisci le colonne</strong>
             </div>
-            <p class="text-muted small mb-2">Leggi descrizione e schema del report prima di scaricare i dati.</p>
+            <p class="text-muted small mb-2">Leggi descrizione e schema del report prima di scaricare.</p>
             <code class="d-block small bg-light p-2 rounded">opensituas info 74</code>
           </div>
         </div>
@@ -285,10 +362,10 @@
           <div class="card-body">
             <div class="d-flex align-items-center gap-2 mb-2">
               <span class="badge bg-warning text-dark rounded-pill">3</span>
-              <strong>Scarica i dati</strong>
+              <strong>Scarica e filtra</strong>
             </div>
-            <p class="text-muted small mb-2">Snapshot a una data, intervallo storico o query su una singola unità.</p>
-            <code class="d-block small bg-light p-2 rounded">opensituas get 74<br>opensituas count 61 --date 01/01/2000<br>opensituas storia comune Messina</code>
+            <p class="text-muted small mb-2">Snapshot, serie storica o query su una singola unità. Esporta in CSV.</p>
+            <code class="d-block small bg-light p-2 rounded">opensituas -o csv get 74 --out dati.csv<br>opensituas storia comune Messina</code>
           </div>
         </div>
       </div>
@@ -296,24 +373,27 @@
     </div>
     <div class="mt-3 text-muted small">
       <i class="bi bi-info-circle"></i>
-      Tutti i comandi accettano <code>-o json</code> / <code>-o csv</code> per pipeline con <code>jq</code> o DuckDB.
-      Exit code <code>2</code> = errore API (messaggio su stderr); <code>0</code> = ok.
+      Tutti i comandi accettano <code>-o csv</code> per aprire il risultato direttamente in Excel o Google Sheets.
+      <code>-o json</code> per pipeline con <code>jq</code> o DuckDB.
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
+<!-- ═══════════════════════════════
      CASO DI STUDIO
-═══════════════════════════════════════════════ -->
+═══════════════════════════════ -->
 <section class="py-5">
   <div class="container">
     <p class="section-label mb-1">Caso di studio</p>
     <h2 class="h3 mb-1">Esploriamo Messina passo dopo passo</h2>
-    <p class="text-muted mb-5">Ogni scheda mostra: il <strong>soggetto</strong> del dato estratto,
-    l'<strong>elaborazione</strong> con testo e grafici, e il <strong>comando</strong> opensituas
-    usato per ottenerlo.</p>
+    <p class="text-muted mb-5 small">
+      Ogni scheda mostra: il <strong>soggetto</strong> del dato estratto,
+      l'<strong>elaborazione</strong> con testo e grafici, il
+      <strong>perché è utile</strong> per un giornalista e il
+      <strong>comando</strong> opensituas usato.
+    </p>
 
-    <!-- ─── CARD 1: Codice ISTAT ─── -->
+    <!-- ── CARD 1: Codice ISTAT ── -->
     <div class="card demo-card shadow-sm mb-4">
       <div class="card-subject">
         <i class="bi bi-fingerprint fs-5"></i>
@@ -332,13 +412,20 @@
           </div>
           <div class="col-md-8">
             <p>Il codice ISTAT è l'<strong>identificativo univoco</strong> del comune nel sistema SITUAS.
-            È la chiave di join (<code>PRO_COM_T</code>) per incrociare qualsiasi dataset pubblico
-            italiano: dati elettorali, bilanci comunali, dati di popolazione, open data PA.</p>
+            In formato a 6 caratteri (<code>PRO_COM_T</code>) è la chiave di join standard in tutti
+            i dataset pubblici italiani: dati ISTAT, dati elettorali, bilanci comunali, open data PA.</p>
             <p class="mb-0 text-muted small">
               <i class="bi bi-lightbulb text-warning"></i>
-              Se il nome è ambiguo (più comuni con lo stesso nome), <code>cerca-codice</code> elenca
-              tutte le forme storiche con i rispettivi intervalli di validità.
+              Se il nome è ambiguo — ci sono comuni con lo stesso nome — <code>cerca-codice</code>
+              elenca tutte le forme storiche con il loro intervallo di validità.
             </p>
+            <div class="journalist-callout mt-3">
+              <div class="callout-label"><i class="bi bi-newspaper me-1"></i>Perché ti serve come giornalista</div>
+              Hai dati elettorali, di bilancio o sanitari per comune ma i codici non combaciano con quelli ISTAT?
+              Il report <strong>pfun 61</strong> contiene anche il <strong>codice catastale</strong>
+              (<code>COD_CATASTO</code>) — l'altro identificatore comune nei dataset PA italiani.
+              Esporta in CSV e fai il join in Excel.
+            </div>
           </div>
         </div>
       </div>
@@ -356,10 +443,17 @@
 <span class="t-data">│ 083048       │ Messina       │ 17/03/1861  │           │</span><br>
 <span class="t-head">└──────────────┴───────────────┴─────────────┴───────────┘</span>
         </div>
+        <div class="mt-2">
+          <span class="t-prompt">$</span>
+          <span class="t-cmd"> opensituas</span>
+          <span class="t-arg"> -o csv get 61</span>
+          <span class="t-val"> --out comuni.csv</span>
+          <span class="t-head">  # tutti i comuni: codice ISTAT + codice catastale + gerarchia territoriale</span>
+        </div>
       </div>
     </div>
 
-    <!-- ─── CARD 2: Dati territoriali ─── -->
+    <!-- ── CARD 2: Dati territoriali ── -->
     <div class="card demo-card shadow-sm mb-4">
       <div class="card-subject subject-green">
         <i class="bi bi-bar-chart-fill fs-5"></i>
@@ -367,7 +461,7 @@
         <span class="pfun-badge ms-auto">pfun 73 + pfun 74</span>
       </div>
       <div class="card-body">
-        <div class="row g-3 mb-4">
+        <div class="row g-3 mb-3">
           <div class="col-6 col-md-3">
             <div class="card stat-card p-3 h-100">
               <div class="stat-label">Popolazione residente</div>
@@ -398,7 +492,29 @@
           </div>
         </div>
 
-        <h6 class="text-muted text-uppercase small fw-bold mb-3">Caratteristiche</h6>
+        <!-- Posizionamento -->
+        <div class="row g-2 mb-3">
+          <div class="col-md-6">
+            <div class="p-3 bg-light rounded d-flex align-items-center gap-3">
+              <div class="fs-2 text-primary fw-bold">3ª</div>
+              <div>
+                <div class="fw-semibold">città della Sicilia</div>
+                <div class="text-muted small">dopo Palermo (~630k) e Catania (~300k)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="p-3 bg-light rounded d-flex align-items-center gap-3">
+              <div class="fs-2 fw-bold" style="color:var(--ondata-orange)">↓</div>
+              <div>
+                <div class="fw-semibold">Popolazione in calo dal picco degli anni '80</div>
+                <div class="text-muted small">Da oltre 260.000 a 217.000: −17% in 40 anni</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h6 class="text-muted text-uppercase small fw-bold mb-2">Caratteristiche geografiche</h6>
         <div class="d-flex flex-wrap gap-2 mb-3">
           <span class="badge fs-6 bg-primary-subtle text-primary-emphasis border border-primary-subtle px-3 py-2">
             <i class="bi bi-water"></i> Comune litoraneo
@@ -413,10 +529,19 @@
             <i class="bi bi-globe-europe-africa"></i> Zona costiera 2021
           </span>
         </div>
-        <div class="p-3 bg-light rounded small">
+        <div class="p-3 bg-light rounded small mb-0">
           <strong>Ecoregione:</strong> Divisione Mediterranea →
           Provincia Tirrenica → Sezione Siciliana →
           <span class="text-primary fw-semibold">Sottosezione Montana Siciliana</span>
+          <span class="text-muted ms-2">(classificazione ecologica ISTAT per analisi ambientali comparate)</span>
+        </div>
+
+        <div class="journalist-callout">
+          <div class="callout-label"><i class="bi bi-newspaper me-1"></i>Perché ti serve come giornalista</div>
+          Il calo demografico di Messina (−17% in 40 anni) è una notizia in sé — e non è un caso isolato.
+          Con <code>pfun 74</code> puoi confrontare la traiettoria di ogni comune italiano.
+          DEGURBA e le caratteristiche geografiche ti permettono di segmentare: comuni costieri vs interni,
+          pianura vs montagna, per analisi sulle disuguaglianze territoriali.
         </div>
       </div>
       <div class="card-terminal">
@@ -425,20 +550,26 @@
           <span class="t-cmd"> opensituas</span>
           <span class="t-arg"> -o json get 74</span>
           <span class="t-val"> | jq '.[] | select(.PRO_COM_T == "083048")'</span>
-        </div>
-        <div class="mt-1 t-out">
-          <span class="t-head"># pfun 74 → POP_LEG, POP_RES, AREA_KMQ | pfun 73 → COM_LIT, ZONA_ALT, DEGURBA_2021, ecoregioni</span>
+          <span class="t-head">  # POP_LEG, POP_RES, AREA_KMQ</span>
         </div>
         <div class="mt-1">
           <span class="t-prompt">$</span>
           <span class="t-cmd"> opensituas</span>
           <span class="t-arg"> -o json get 73</span>
           <span class="t-val"> | jq '.[] | select(.PRO_COM_T == "083048")'</span>
+          <span class="t-head">  # COM_LIT, ZONA_ALT, DEGURBA_2021, ecoregioni</span>
+        </div>
+        <div class="mt-1">
+          <span class="t-prompt">$</span>
+          <span class="t-cmd"> opensituas</span>
+          <span class="t-arg"> -o csv get 74</span>
+          <span class="t-val"> --out comuni_dimensione.csv</span>
+          <span class="t-head">  # tutti i comuni → apri in Excel o Google Sheets</span>
         </div>
       </div>
     </div>
 
-    <!-- ─── CARD 3: Classificazioni di policy ─── -->
+    <!-- ── CARD 3: Classificazioni ── -->
     <div class="card demo-card shadow-sm mb-4">
       <div class="card-subject subject-purple">
         <i class="bi bi-diagram-3-fill fs-5"></i>
@@ -459,20 +590,22 @@
                   </div>
                 </div>
                 <p class="small text-muted mb-2">
-                  Messina è un polo di offerta di servizi essenziali per il territorio circostante.
-                  La scala va da <strong>A</strong> (polo) a <strong>F</strong> (ultra-periferico).
+                  Messina eroga servizi essenziali (ospedali, scuole superiori, stazioni ferroviarie)
+                  per i comuni della provincia. È il punto di riferimento per chi abita nei comuni
+                  più periferici dei Peloritani e delle isole Eolie.
                 </p>
+                <div class="small mb-2">
+                  <strong>La scala delle aree interne</strong> va da A (polo) a F (ultraperiferico:
+                  oltre 67 minuti dal servizio più vicino). Fondamentale per analizzare
+                  il divario tra centro e periferia.
+                </div>
                 <div class="d-flex gap-1 flex-wrap">
                   <span class="badge bg-primary">A-Polo</span>
-                  <span class="badge bg-secondary">B</span>
-                  <span class="badge bg-secondary">C</span>
-                  <span class="badge bg-secondary">D</span>
-                  <span class="badge bg-secondary">E</span>
-                  <span class="badge bg-secondary">F</span>
-                </div>
-                <div class="mt-2">
-                  <span class="badge bg-success-subtle text-success-emphasis border border-success-subtle">Zone montane parziali</span>
-                  <span class="badge bg-info-subtle text-info-emphasis border border-info-subtle ms-1">Vincoli naturali</span>
+                  <span class="badge bg-secondary opacity-50">B</span>
+                  <span class="badge bg-secondary opacity-50">C</span>
+                  <span class="badge bg-secondary opacity-50">D</span>
+                  <span class="badge bg-secondary opacity-50">E</span>
+                  <span class="badge bg-danger opacity-50">F-Ultra</span>
                 </div>
               </div>
             </div>
@@ -482,20 +615,23 @@
             <div class="card h-100 border-0 bg-light">
               <div class="card-body">
                 <div class="d-flex align-items-center gap-2 mb-2">
-                  <i class="bi bi-briefcase-fill text-success fs-4"></i>
+                  <i class="bi bi-anchor text-success fs-4"></i>
                   <div>
                     <div class="small text-muted fw-bold text-uppercase">Sistema Locale del Lavoro</div>
                     <div class="fw-bold text-success">SLL 1920 — Messina</div>
                   </div>
                 </div>
                 <p class="small text-muted mb-2">
-                  Messina è il <strong>capoluogo</strong> del proprio SLL (bacino di pendolarismo).
-                  I SLL raggruppano comuni per flussi lavorativi giornalieri.
+                  Messina è il <strong>capoluogo</strong> del proprio SLL — il bacino di pendolarismo
+                  che definisce dove lavorano davvero gli abitanti del territorio.
                 </p>
-                <div class="p-2 bg-white rounded border small">
-                  <div class="text-muted">Specializzazione produttiva</div>
-                  <div class="fw-semibold">Sistemi locali portuali<br>e dei cantieri navali</div>
-                  <div class="text-muted mt-1">Industria pesante · CL_DIM 4</div>
+                <div class="p-2 bg-white rounded border">
+                  <div class="small text-muted mb-1">Specializzazione produttiva (Censimento 2021)</div>
+                  <div class="fw-bold text-success">Sistemi locali portuali<br>e dei cantieri navali</div>
+                  <div class="text-muted small mt-1">
+                    Lo Stretto di Messina, il porto traghetti verso la Calabria,
+                    i cantieri navali storici: l'economia reale del territorio emerge da questo dato.
+                  </div>
                 </div>
               </div>
             </div>
@@ -508,23 +644,31 @@
                   <i class="bi bi-flag-fill text-warning fs-4"></i>
                   <div>
                     <div class="small text-muted fw-bold text-uppercase">Nomenclatura NUTS europea</div>
-                    <div class="fw-bold" style="color: var(--ondata-orange)">ITG13 — Messina</div>
+                    <div class="fw-bold" style="color:var(--ondata-orange)">ITG13 — Messina</div>
                   </div>
                 </div>
                 <p class="small text-muted mb-2">
-                  Codice NUTS3 stabile dal 2006: fondamentale per confronti con
-                  dati EUROSTAT e analisi comparative tra regioni europee.
+                  Il codice NUTS3 è stabile dal 2006: indispensabile per confrontare
+                  Messina con province europee analoghe usando dati EUROSTAT
+                  (disoccupazione, PIL pro capite, accesso ai servizi).
                 </p>
                 <table class="table table-sm table-borderless small mb-0">
-                  <tr><td class="text-muted">NUTS3 2006</td><td><code>ITG13</code></td></tr>
-                  <tr><td class="text-muted">NUTS3 2010</td><td><code>ITG13</code></td></tr>
-                  <tr><td class="text-muted">NUTS3 2021</td><td><code>ITG13</code></td></tr>
-                  <tr><td class="text-muted">NUTS3 2024</td><td><code>ITG13</code></td></tr>
+                  <tr><td class="text-muted">NUTS3 2006–2024</td><td><code>ITG13</code> <span class="badge bg-success-subtle text-success-emphasis">stabile</span></td></tr>
                 </table>
               </div>
             </div>
           </div>
 
+        </div>
+
+        <div class="journalist-callout mt-3">
+          <div class="callout-label"><i class="bi bi-newspaper me-1"></i>Perché ti serve come giornalista</div>
+          <strong>Aree interne</strong>: con <code>pfun 75</code> puoi trovare tutti i comuni F-Ultraperiferico d'Italia
+          — quelli a più di 67 minuti da un ospedale. È la mappa del divario territoriale italiano.
+          <br>
+          <strong>SLL "porto e cantieri navali"</strong>: questa specializzazione identifica l'economia reale
+          di un territorio, al di là dei confini comunali. Utile per confrontare aree economicamente simili
+          in tutta Italia con <code>pfun 444</code>.
         </div>
       </div>
       <div class="card-terminal">
@@ -532,34 +676,20 @@
           <span class="t-prompt">$</span>
           <span class="t-cmd"> opensituas</span>
           <span class="t-arg"> -o json get 75</span>
-          <span class="t-val"> | jq '.[] | select(.PRO_COM_T == "083048")'</span>
-          <span class="t-head">  # aree interne, zone montane</span>
+          <span class="t-val"> | jq '[.[] | select(.AREE_INT_2020 == "F-Ultraperiferico")] | length'</span>
         </div>
-        <div class="mt-1">
-          <span class="t-prompt">$</span>
-          <span class="t-cmd"> opensituas</span>
-          <span class="t-arg"> -o json get 408</span>
-          <span class="t-val"> | jq '.[] | select(.PRO_COM_T == "083048")'</span>
-          <span class="t-head">  # SLL di appartenenza</span>
-        </div>
-        <div class="mt-1">
+        <div class="mt-1 t-head"># Quanti comuni italiani sono ultraperiferici?</div>
+        <div class="mt-2">
           <span class="t-prompt">$</span>
           <span class="t-cmd"> opensituas</span>
           <span class="t-arg"> -o json get 444</span>
-          <span class="t-val"> | jq '.[] | select(.COD_SLL == 1920)'</span>
-          <span class="t-head">  # specializzazione produttiva SLL</span>
+          <span class="t-val"> | jq '[.[] | select(.CLASSE_2021_NAME | contains("portuali"))]'</span>
         </div>
-        <div class="mt-1">
-          <span class="t-prompt">$</span>
-          <span class="t-cmd"> opensituas</span>
-          <span class="t-arg"> -o json get 76</span>
-          <span class="t-val"> | jq '.[] | select(.PRO_COM_T == "083048")'</span>
-          <span class="t-head">  # codici NUTS3</span>
-        </div>
+        <div class="mt-1 t-head"># Tutti i SLL portuali e dei cantieri navali in Italia</div>
       </div>
     </div>
 
-    <!-- ─── CARD 4: Storia del comune ─── -->
+    <!-- ── CARD 4: Storia ── -->
     <div class="card demo-card shadow-sm mb-4">
       <div class="card-subject subject-orange">
         <i class="bi bi-clock-history fs-5"></i>
@@ -568,9 +698,10 @@
       </div>
       <div class="card-body">
         <p class="text-muted small mb-4">
-          Dal 1861 a oggi, Messina ha subito 5 variazioni territoriali documentate con
-          provvedimento normativo. Il comando <code>storia</code> le ricostruisce tutte,
-          con riferimento a leggi e decreti reali.
+          Dal 1861 a oggi, Messina ha subito <strong>5 variazioni territoriali</strong> documentate con
+          provvedimento normativo. Il comando <code>storia --dettaglio</code> le ricostruisce tutte
+          con riferimento preciso alla legge o al decreto reale.
+          <strong>Questa storia esiste per ognuno dei 7.894 comuni italiani.</strong>
         </p>
 
         <div class="timeline">
@@ -581,7 +712,7 @@
             <div class="timeline-title">
               <span class="badge bg-secondary me-1">PV</span> Prima validità nel sistema
             </div>
-            <div class="timeline-desc">Prima registrazione nel sistema SITUAS — data di inizio dell'Unità d'Italia.</div>
+            <div class="timeline-desc">Prima registrazione nel sistema SITUAS — data dell'Unità d'Italia.</div>
             <div class="timeline-prov">Prima Validità</div>
           </div>
 
@@ -641,9 +772,17 @@
         </div>
 
         <div class="alert alert-light border mt-4 mb-0 small">
-          <i class="bi bi-info-circle text-primary"></i>
+          <i class="bi bi-check-circle text-success"></i>
           <strong>Nessuna variazione dal 1986.</strong> Messina è stabile amministrativamente
           da 40 anni. Il report pfun 129 (variazioni dal 1991) non riporta eventi per questo comune.
+        </div>
+
+        <div class="journalist-callout mt-3">
+          <div class="callout-label"><i class="bi bi-newspaper me-1"></i>Perché ti serve come giornalista</div>
+          Stai scrivendo di un comune nato da fusione recente? Con <code>storia --dettaglio</code>
+          ottieni il testo della legge, le date esatte e i comuni coinvolti — fonte primaria citabile.
+          Il riferimento normativo (R.D., L.R., D.P.R.) ti permette di risalire direttamente
+          al provvedimento originale.
         </div>
       </div>
       <div class="card-terminal">
@@ -655,8 +794,15 @@
           <span class="t-arg"> --dettaglio</span>
         </div>
         <div class="mt-1 t-head">
-          # Restituisce: storia[], con per ogni evento: tipo variazione, data, descrizione,<br>
-          # provvedimento (tipo doc, estremi, G.U.), unita_coinvolte (codici + denominazioni)
+          # Output: storia[], con tipo variazione, data, descrizione,<br>
+          # provvedimento (tipo, estremi, G.U.) e unita_coinvolte (codici + nomi)
+        </div>
+        <div class="mt-2">
+          <span class="t-prompt">$</span>
+          <span class="t-cmd"> opensituas</span>
+          <span class="t-arg"> -o json get 129</span>
+          <span class="t-val"> | jq '[.[] | select(.ANNO &gt;= "2015")]'</span>
+          <span class="t-head">  # tutte le variazioni italiane dal 2015, con testo del provvedimento</span>
         </div>
       </div>
     </div>
@@ -664,16 +810,21 @@
   </div>
 </section>
 
-<!-- CHART: Serie storica comuni italiani -->
+<!-- CHART -->
 <section class="py-5 chart-section border-top border-bottom">
   <div class="container">
     <p class="section-label mb-1">Contesto nazionale</p>
     <h2 class="h4 mb-1">I comuni italiani dal 1948 a oggi</h2>
-    <p class="text-muted mb-4 small">
+    <p class="text-muted mb-1 small">
       Messina fa parte di un sistema di <strong>7.894 comuni</strong> (al 2026).
-      Dal picco di 8.100 comuni nel 1991–2001, oltre 200 unità sono scomparse per fusione.
-      Il grafico mostra la serie storica estratta dal report <code>pfun 61</code> con
-      <code>opensituas count 61 --date DD/MM/YYYY</code>.
+      Dal picco di <strong>8.100</strong> comuni nel 1991–2001, oltre 200 unità sono scomparse per fusione —
+      soprattutto a partire dal 2010, quando le politiche di spending review hanno incentivato le unioni.
+      Dal 1948 al 1971 invece i comuni <em>aumentarono</em>, per scorpori e riconoscimento di centri abitati.
+    </p>
+    <p class="text-muted mb-4 small">
+      <i class="bi bi-info-circle"></i>
+      <em>Nota metodologica:</em> la variazione assoluta è di circa 200 comuni su 8.000 (+2,5% / −2,5%).
+      Il grafico parte da 7.400 per rendere visibile il trend, non per esagerarne la portata.
     </p>
     <div class="row">
       <div class="col-lg-8">
@@ -683,19 +834,20 @@
         <div class="card border-0 bg-white shadow-sm p-3 mb-3">
           <div class="small text-muted">Comuni al picco (1991–2001)</div>
           <div class="fs-4 fw-bold text-primary">8.100</div>
+          <div class="small text-muted">Spending review ancora lontana</div>
         </div>
         <div class="card border-0 bg-white shadow-sm p-3 mb-3">
           <div class="small text-muted">Comuni oggi (2026)</div>
           <div class="fs-4 fw-bold text-success">7.894</div>
         </div>
-        <div class="card border-0 bg-white shadow-sm p-3">
-          <div class="small text-muted">Riduzione per fusioni</div>
+        <div class="card border-0 bg-white shadow-sm p-3 mb-3">
+          <div class="small text-muted">Riduzione per fusioni dal 2001</div>
           <div class="fs-4 fw-bold text-danger">−206</div>
-          <div class="small text-muted">dal 2001 a oggi</div>
+          <div class="small text-muted">Accelerazione post-2010</div>
         </div>
-        <div class="mt-3 p-2 bg-light rounded small text-muted font-monospace">
+        <div class="mt-2 p-2 bg-light rounded small font-monospace text-muted">
           opensituas -o json count 61<br>
-          --date 01/01/1991<br>
+          &nbsp;&nbsp;--date 01/01/1991<br>
           | jq '.[0].NUM_ROWS'
         </div>
       </div>
@@ -709,9 +861,9 @@
     <p class="section-label mb-1">Riferimento rapido</p>
     <h2 class="h4 mb-2">Cosa puoi chiedere a opensituas</h2>
     <p class="text-muted mb-4 small">
-      La colonna <strong>Con la Skill AI</strong> mostra come porre la domanda in linguaggio
-      naturale a un agente Claude Code con la skill <code>situas-explorer</code> installata.
-      <a href="../skills/situas-explorer/SKILL.md">Installa la skill →</a>
+      La colonna <strong>Con la Skill AI</strong> mostra come porre la domanda in linguaggio naturale
+      a un agente Claude Code con la skill
+      <a href="../skills/situas-explorer/SKILL.md"><code>situas-explorer</code></a> installata.
     </p>
     <div class="table-responsive">
       <table class="table table-hover align-middle skill-table">
@@ -724,54 +876,55 @@
         </thead>
         <tbody>
           <tr>
-            <td><i class="bi bi-search text-muted me-1"></i>Qual è il codice ISTAT del mio comune?</td>
-            <td><code>opensituas cerca-codice comune "Messina"</code></td>
-            <td>"Trova il codice ISTAT di Messina"</td>
+            <td><i class="bi bi-search text-muted me-1"></i>Qual è il codice ISTAT del mio comune? E il codice catastale?</td>
+            <td><code>opensituas -o csv get 61 --out comuni.csv</code></td>
+            <td>"Trova il codice ISTAT e catastale di Messina"</td>
           </tr>
           <tr>
-            <td><i class="bi bi-clock-history text-muted me-1"></i>Quando è nato? Ha cambiato nome o confini?</td>
+            <td><i class="bi bi-clock-history text-muted me-1"></i>Il mio comune si è fuso con un altro? Quando? Con quale legge?</td>
             <td><code>opensituas storia comune "Messina" --dettaglio</code></td>
-            <td>"Raccontami la storia del comune di Messina"</td>
+            <td>"Raccontami la storia amministrativa del comune di Messina"</td>
           </tr>
           <tr>
-            <td><i class="bi bi-people-fill text-muted me-1"></i>Quanti abitanti ha? Quanto è grande?</td>
+            <td><i class="bi bi-people-fill text-muted me-1"></i>Quanti abitanti ha? La popolazione sta crescendo o calando?</td>
             <td><code>opensituas -o json get 74 | jq '.[] | select(.PRO_COM_T == "083048")'</code></td>
             <td>"Popolazione e superficie di Messina"</td>
           </tr>
           <tr>
-            <td><i class="bi bi-geo-alt text-muted me-1"></i>È un comune di montagna? È sul mare?</td>
-            <td><code>opensituas -o json get 73 | jq '.[] | select(.PRO_COM_T == "083048")'</code></td>
-            <td>"Che caratteristiche territoriali ha Messina?"</td>
-          </tr>
-          <tr>
-            <td><i class="bi bi-pin-map text-muted me-1"></i>È un polo di servizi o un'area periferica?</td>
+            <td><i class="bi bi-pin-map text-muted me-1"></i>È un polo di servizi o un'area periferica? A quanti minuti è dal servizio più vicino?</td>
             <td><code>opensituas -o json get 75 | jq '.[] | select(.PRO_COM_T == "083048")'</code></td>
-            <td>"Messina è un'area interna?"</td>
+            <td>"Messina è un'area interna o un polo?"</td>
           </tr>
           <tr>
-            <td><i class="bi bi-briefcase text-muted me-1"></i>A quale bacino lavorativo appartiene?</td>
-            <td><code>opensituas -o json get 408 | jq '.[] | select(.PRO_COM_T == "083048")'</code></td>
-            <td>"A quale SLL appartiene Messina?"</td>
+            <td><i class="bi bi-briefcase text-muted me-1"></i>Qual è la vocazione economica del territorio? (turismo, manifattura, porto...)</td>
+            <td><code>opensituas -o json get 408 | jq '.[] | select(.PRO_COM_T == "083048")'</code><br>
+                <code class="mt-1 d-block">opensituas -o json get 444 | jq '.[] | select(.COD_SLL == 1920)'</code></td>
+            <td>"A quale SLL appartiene Messina e qual è la sua specializzazione?"</td>
           </tr>
           <tr>
-            <td><i class="bi bi-flag text-muted me-1"></i>Qual è il suo codice europeo NUTS3?</td>
-            <td><code>opensituas -o json get 76 | jq '.[] | select(.PRO_COM_T == "083048")'</code></td>
-            <td>"Qual è il codice NUTS3 di Messina?"</td>
+            <td><i class="bi bi-diagram-2 text-muted me-1"></i>Quante fusioni di comuni ci sono state nella mia regione negli ultimi 10 anni?</td>
+            <td><code>opensituas -o json get 129 | jq '[.[] | select(.ANNO &gt;= "2015" and .COD_UTS == "083")]'</code></td>
+            <td>"Fusioni di comuni in provincia di Messina dal 2015"</td>
           </tr>
           <tr>
-            <td><i class="bi bi-bar-chart text-muted me-1"></i>Quanti comuni aveva l'Italia nel 2001?</td>
+            <td><i class="bi bi-input-cursor text-muted me-1"></i>Quali comuni della mia regione hanno cambiato denominazione?</td>
+            <td><code>opensituas -o json get 104 --from 17/03/1861 --to 02/06/2026 | jq '[.[] | select(.COD_UTS == "083")]'</code></td>
+            <td>"Comuni della provincia di Messina che hanno cambiato nome"</td>
+          </tr>
+          <tr>
+            <td><i class="bi bi-bar-chart text-muted me-1"></i>Quanti comuni aveva l'Italia in un anno preciso? Come è cambiato nel tempo?</td>
             <td><code>opensituas -o json count 61 --date 01/01/2001 | jq '.[0].NUM_ROWS'</code></td>
             <td>"Quanti comuni aveva l'Italia nel 2001?"</td>
           </tr>
           <tr>
-            <td><i class="bi bi-arrow-left-right text-muted me-1"></i>Come sono cambiati i codici ISTAT dal 2001 a oggi?</td>
-            <td><code>opensituas -o csv get 99 --from 21/10/2001 --to 31/12/2024 --out mapping.csv</code></td>
-            <td>"Mappami i codici comuni dal 2001 a oggi"</td>
+            <td><i class="bi bi-flag text-muted me-1"></i>Qual è il codice europeo NUTS3? (per confronti con dati EUROSTAT)</td>
+            <td><code>opensituas -o json get 76 | jq '.[] | select(.PRO_COM_T == "083048")'</code></td>
+            <td>"Qual è il codice NUTS3 di Messina?"</td>
           </tr>
           <tr>
-            <td><i class="bi bi-diagram-2 text-muted me-1"></i>Quali comuni si sono fusi dal 2010?</td>
-            <td><code>opensituas -o json get 129 | jq '[.[] | select(.ANNO &gt;= "2010" and (.DESC_COD_VARIAZIONE | contains("usione")))]'</code></td>
-            <td>"Elenca le fusioni di comuni dal 2010"</td>
+            <td><i class="bi bi-geo text-muted me-1"></i>Ho dati del 2001 e del 2021: i codici ISTAT sono cambiati? Come li allineo?</td>
+            <td><code>opensituas -o csv get 99 --from 21/10/2001 --to 31/12/2021 --out mapping.csv</code></td>
+            <td>"Mappami i codici comuni cambiati tra 2001 e 2021"</td>
           </tr>
         </tbody>
       </table>
@@ -779,28 +932,31 @@
   </div>
 </section>
 
-<!-- INSTALLAZIONE E RIFERIMENTI -->
+<!-- INSTALLAZIONE -->
 <section class="py-5 bg-dark text-light">
   <div class="container">
     <div class="row g-4">
       <div class="col-md-4">
         <h5 class="fw-bold mb-3"><i class="bi bi-download me-2 text-warning"></i>Installazione</h5>
-        <p class="text-secondary small">Richiede Python 3.10+. Installazione raccomandata con <code>uv</code>:</p>
+        <p class="text-secondary small">Richiede Python 3.10+ e un terminale (Mac, Linux, Windows con WSL).</p>
         <div class="bg-black rounded p-3 font-monospace small mb-3">
           <div class="text-success">$</div>
           <div class="text-warning">uv tool install opensituas</div>
           <div class="text-secondary mt-2"># oppure con pip:</div>
           <div class="text-warning">pip install opensituas</div>
         </div>
-        <a href="https://pypi.org/project/opensituas/" target="_blank" class="btn btn-outline-warning btn-sm">
+        <a href="https://pypi.org/project/opensituas/" target="_blank" class="btn btn-outline-warning btn-sm me-2">
           <i class="bi bi-box-seam"></i> PyPI
+        </a>
+        <a href="../docs/tutorial-giornalisti.md" class="btn btn-outline-light btn-sm">
+          <i class="bi bi-newspaper"></i> Tutorial completo
         </a>
       </div>
       <div class="col-md-4">
         <h5 class="fw-bold mb-3"><i class="bi bi-robot me-2 text-info"></i>Skill per agenti AI</h5>
         <p class="text-secondary small">
-          Installa la skill per <strong>Claude Code</strong>: guida l'agente nel discovery
-          del catalogo e nei casi d'uso più comuni, in linguaggio naturale.
+          Installa la skill per <strong>Claude Code</strong>: interroga il SITUAS in
+          linguaggio naturale, senza ricordare i numeri dei report.
         </p>
         <div class="bg-black rounded p-3 font-monospace small mb-3">
           <div class="text-success">$</div>
@@ -813,31 +969,11 @@
       <div class="col-md-4">
         <h5 class="fw-bold mb-3"><i class="bi bi-book me-2 text-success"></i>Documentazione</h5>
         <ul class="list-unstyled text-secondary small">
-          <li class="mb-2">
-            <a href="../README.md" class="text-light">
-              <i class="bi bi-file-text me-1"></i>README — panoramica e casi d'uso
-            </a>
-          </li>
-          <li class="mb-2">
-            <a href="../docs/tutorial-giornalisti.md" class="text-light">
-              <i class="bi bi-newspaper me-1"></i>Tutorial per giornalisti
-            </a>
-          </li>
-          <li class="mb-2">
-            <a href="../docs/architecture.md" class="text-light">
-              <i class="bi bi-diagram-3 me-1"></i>Architettura interna
-            </a>
-          </li>
-          <li class="mb-2">
-            <a href="../skills/situas-explorer/SKILL.md" class="text-light">
-              <i class="bi bi-robot me-1"></i>Skill situas-explorer
-            </a>
-          </li>
-          <li>
-            <a href="https://situas.istat.it/" target="_blank" class="text-light">
-              <i class="bi bi-box-arrow-up-right me-1"></i>SITUAS — portale ISTAT
-            </a>
-          </li>
+          <li class="mb-2"><a href="../README.md" class="text-light"><i class="bi bi-file-text me-1"></i>README — panoramica e casi d'uso</a></li>
+          <li class="mb-2"><a href="../docs/tutorial-giornalisti.md" class="text-light"><i class="bi bi-newspaper me-1"></i>Tutorial per giornalisti</a></li>
+          <li class="mb-2"><a href="../docs/architecture.md" class="text-light"><i class="bi bi-diagram-3 me-1"></i>Architettura interna</a></li>
+          <li class="mb-2"><a href="../skills/situas-explorer/SKILL.md" class="text-light"><i class="bi bi-robot me-1"></i>Skill situas-explorer</a></li>
+          <li><a href="https://situas.istat.it/" target="_blank" class="text-light"><i class="bi bi-box-arrow-up-right me-1"></i>SITUAS — portale ISTAT</a></li>
         </ul>
       </div>
     </div>
@@ -860,16 +996,13 @@
   </div>
 </footer>
 
-<!-- Toast copia -->
 <div class="copy-toast" id="copyToast">
   <i class="bi bi-check2"></i> Copiato negli appunti!
 </div>
 
-<!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 <script>
-  /* ── Chart: serie storica comuni italiani ── */
   const ctx = document.getElementById('chartComuni');
   new Chart(ctx, {
     type: 'line',
@@ -901,22 +1034,19 @@
       },
       scales: {
         y: {
-          min: 7500,
+          min: 7400,
           max: 8250,
           ticks: {
             callback: v => v.toLocaleString('it-IT'),
-            stepSize: 250
+            stepSize: 200
           },
           grid: { color: 'rgba(0,0,0,.06)' }
         },
-        x: {
-          grid: { display: false }
-        }
+        x: { grid: { display: false } }
       }
     }
   });
 
-  /* ── Copia comando di installazione ── */
   function copyInstall(el) {
     navigator.clipboard.writeText('uv tool install opensituas').then(() => {
       const toast = document.getElementById('copyToast');
