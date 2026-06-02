@@ -4,6 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Opensituas Demo — Caso d'uso sul Comune di Messina</title>
+  <meta name="description" content="opensituas interroga il SITUAS ISTAT — l'anagrafe ufficiale di tutti i comuni, province e regioni italiani dall'Unità d'Italia a oggi. Demo interattiva con il caso d'uso sul Comune di Messina.">
+  <meta name="keywords" content="opensituas, SITUAS, ISTAT, comuni italiani, codice ISTAT, geography, open data, variazioni territoriali, dati demografici">
+  <meta name="author" content="ondata">
+  <link rel="canonical" href="https://ondata.github.io/opensituas/">
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ondata.github.io/opensituas/">
+  <meta property="og:title" content="Opensituas — Anagrafe dei comuni italiani dal 1861 a oggi">
+  <meta property="og:description" content="Interroga il SITUAS ISTAT con pochi comandi: codici ufficiali, storia delle variazioni e dati demografici per tutti i 7.894 comuni italiani. Demo interattiva sul Comune di Messina.">
+  <meta property="og:site_name" content="opensituas">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:image" content="https://ondata.github.io/opensituas/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Opensituas — Anagrafe dei comuni italiani dal 1861 a oggi">
+  <meta name="twitter:description" content="Interroga il SITUAS ISTAT con pochi comandi: codici ufficiali, storia delle variazioni e dati demografici per tutti i 7.894 comuni italiani.">
+  <meta name="twitter:image" content="https://ondata.github.io/opensituas/social-preview.png">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <style>
@@ -189,10 +211,10 @@
       <span class="badge badge-ondata ms-1">demo</span>
     </a>
     <div class="d-flex align-items-center gap-2">
-      <a href="https://github.com/ondata/opensituas" target="_blank" class="btn btn-sm btn-outline-light">
+      <a href="https://github.com/ondata/opensituas" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-light">
         <i class="bi bi-github"></i> GitHub
       </a>
-      <a href="https://pypi.org/project/opensituas/" target="_blank" class="btn btn-sm btn-outline-warning">
+      <a href="https://pypi.org/project/opensituas/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-warning">
         <i class="bi bi-box-seam"></i> PyPI
       </a>
     </div>
@@ -219,17 +241,17 @@
         <span>uv tool install opensituas</span>
         <i class="bi bi-clipboard" style="opacity:.7; font-size:.85rem"></i>
       </span>
-      <a href="../README.md" class="btn btn-outline-light btn-sm">
+      <a href="https://github.com/ondata/opensituas#readme" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm">
         <i class="bi bi-book"></i> README
       </a>
-      <a href="../docs/tutorial-giornalisti.md" class="btn btn-outline-light btn-sm">
+      <a href="tutorial-giornalisti.md" class="btn btn-outline-light btn-sm">
         <i class="bi bi-newspaper"></i> Tutorial giornalisti
       </a>
     </div>
     <div style="opacity:.7; font-size:.82rem">
       <i class="bi bi-robot me-1"></i>
       Usi Claude Code?
-      <a href="../skills/situas-explorer/SKILL.md" style="color:#ffd580">
+      <a href="https://github.com/ondata/opensituas/blob/main/skills/situas-explorer/SKILL.md" target="_blank" rel="noopener noreferrer" style="color:#ffd580">
         Installa la skill situas-explorer
       </a>
       e interroga il SITUAS in linguaggio naturale.
@@ -811,7 +833,7 @@
     <p class="text-muted mb-4 small">
       La colonna <strong>Con la Skill AI</strong> mostra come porre la domanda in linguaggio naturale
       a Claude Code con la skill
-      <a href="../skills/situas-explorer/SKILL.md"><code>situas-explorer</code></a>.
+      <a href="https://github.com/ondata/opensituas/blob/main/skills/situas-explorer/SKILL.md" target="_blank" rel="noopener noreferrer"><code>situas-explorer</code></a>.
     </p>
     <div class="table-responsive">
       <table class="table table-hover align-middle">
@@ -905,10 +927,10 @@
           <div class="text-secondary mt-2"># oppure:</div>
           <div class="text-warning">pip install opensituas</div>
         </div>
-        <a href="https://pypi.org/project/opensituas/" target="_blank" class="btn btn-outline-warning btn-sm me-2">
+        <a href="https://pypi.org/project/opensituas/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-warning btn-sm me-2">
           <i class="bi bi-box-seam"></i> PyPI
         </a>
-        <a href="../docs/tutorial-giornalisti.md" class="btn btn-outline-light btn-sm">
+        <a href="tutorial-giornalisti.md" class="btn btn-outline-light btn-sm">
           <i class="bi bi-newspaper"></i> Tutorial completo
         </a>
       </div>
@@ -922,18 +944,18 @@
           <div class="text-success">$</div>
           <div class="text-warning">npx skills add ondata/opensituas</div>
         </div>
-        <a href="../skills/situas-explorer/SKILL.md" class="btn btn-outline-info btn-sm">
+        <a href="https://github.com/ondata/opensituas/blob/main/skills/situas-explorer/SKILL.md" target="_blank" rel="noopener noreferrer" class="btn btn-outline-info btn-sm">
           <i class="bi bi-lightning-fill"></i> Documentazione Skill
         </a>
       </div>
       <div class="col-md-4">
         <h5 class="fw-bold mb-3"><i class="bi bi-book me-2 text-success"></i>Documentazione</h5>
         <ul class="list-unstyled text-secondary small">
-          <li class="mb-2"><a href="../README.md" class="text-light"><i class="bi bi-file-text me-1"></i>README — panoramica e casi d'uso</a></li>
-          <li class="mb-2"><a href="../docs/tutorial-giornalisti.md" class="text-light"><i class="bi bi-newspaper me-1"></i>Tutorial per giornalisti</a></li>
-          <li class="mb-2"><a href="../docs/architecture.md" class="text-light"><i class="bi bi-diagram-3 me-1"></i>Architettura interna</a></li>
-          <li class="mb-2"><a href="../skills/situas-explorer/SKILL.md" class="text-light"><i class="bi bi-robot me-1"></i>Skill situas-explorer</a></li>
-          <li><a href="https://situas.istat.it/" target="_blank" class="text-light"><i class="bi bi-box-arrow-up-right me-1"></i>SITUAS — portale ISTAT</a></li>
+          <li class="mb-2"><a href="https://github.com/ondata/opensituas#readme" target="_blank" rel="noopener noreferrer" class="text-light"><i class="bi bi-file-text me-1"></i>README — panoramica e casi d'uso</a></li>
+          <li class="mb-2"><a href="tutorial-giornalisti.md" class="text-light"><i class="bi bi-newspaper me-1"></i>Tutorial per giornalisti</a></li>
+          <li class="mb-2"><a href="architecture.md" class="text-light"><i class="bi bi-diagram-3 me-1"></i>Architettura interna</a></li>
+          <li class="mb-2"><a href="https://github.com/ondata/opensituas/blob/main/skills/situas-explorer/SKILL.md" target="_blank" rel="noopener noreferrer" class="text-light"><i class="bi bi-robot me-1"></i>Skill situas-explorer</a></li>
+          <li><a href="https://situas.istat.it/" target="_blank" rel="noopener noreferrer" class="text-light"><i class="bi bi-box-arrow-up-right me-1"></i>SITUAS — portale ISTAT</a></li>
         </ul>
       </div>
     </div>
@@ -944,12 +966,12 @@
   <div class="container d-flex flex-wrap justify-content-between align-items-center">
     <div class="small">
       <strong>opensituas</strong> — un'idea di
-      <a href="https://alice-corona.eu/" target="_blank">Alice Corona</a> ·
-      progetto <a href="https://ondata.it/" target="_blank">ondata</a> ·
+      <a href="https://alice-corona.eu/" target="_blank" rel="noopener noreferrer">Alice Corona</a> ·
+      progetto <a href="https://ondata.it/" target="_blank" rel="noopener noreferrer">ondata</a> ·
       Licenza MIT
     </div>
     <div class="small">
-      Dati: <a href="https://situas.istat.it/" target="_blank">SITUAS ISTAT</a> ·
+      Dati: <a href="https://situas.istat.it/" target="_blank" rel="noopener noreferrer">SITUAS ISTAT</a> ·
       Comune di Messina (cod. 083048)
     </div>
   </div>
