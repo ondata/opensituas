@@ -37,6 +37,13 @@ opensituas è un'idea di [Alice Corona](https://alice-corona.eu/).
 uv tool install opensituas
 ```
 
+**Nota bene:** `opensituas` funziona ancora meglio accoppiato alla skill dedicata per
+Claude Code, che guida l'agente nel discovery del catalogo e nei casi d'uso più comuni:
+
+```bash
+npx skills add ondata/opensituas
+```
+
 ## Comandi
 
 ```bash
