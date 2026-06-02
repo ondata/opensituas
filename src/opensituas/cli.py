@@ -203,7 +203,8 @@ def info_cmd(pfun: int = typer.Argument(..., help="Id report (campo pfun del cat
 
     def go():
         entry = catalog.get_entry(pfun)
-        data = base.publish_get(entry["INFO_LINK"], timeout=_timeout())
+        link = catalog.apply_date(entry["INFO_LINK"], default_date=catalog.validity_end(entry))
+        data = base.publish_get(link, timeout=_timeout())
         cols = data.get("COL_DETAILS", [])
         return {
             "pfun": pfun,
