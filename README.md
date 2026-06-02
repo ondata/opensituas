@@ -6,29 +6,36 @@
 
 # opensituas
 
-CLI per il **SITUAS** — Sistema Informativo Territoriale delle Unità Amministrative e
-Statistiche (ISTAT) — progettata per essere orchestrata da un agente AI: output
-strutturato (`table`/`json`/`csv`), errori auto-esplicativi, catalogo cachato.
+Qualsiasi analisi geografica sull'Italia parte da qui.
+
+Il **SITUAS** (ISTAT) è la fonte autoritativa dei codici e delle denominazioni ufficiali
+di tutte le unità territoriali italiane — dall'Unità d'Italia a oggi. Contiene la
+storia di ogni fusione, ridenominazione e soppressione di comuni, province e regioni.
+`opensituas` lo espone come CLI orchestrabile, con output `table`/`json`/`csv` pronto
+per `jq`, DuckDB o un agente AI.
 
 opensituas è un'idea di [Alice Corona](https://alice-corona.eu/).
+
+## Cosa puoi fare
+
+- **Ottenere i codici Istat ufficiali** di tutti i comuni, province e regioni a qualsiasi
+  data — dalla lista corrente allo snapshot storico del 1861.
+- **Arricchire qualsiasi dataset** con popolazione, superficie, zona altimetrica,
+  appartenenza a aree interne, classificazione montagna/collina/pianura.
+- **Ricostruire la storia di un territorio**: quando è nato il comune di Ledro? Quante
+  fusioni ci sono state dal 2010? Quale legge ha cambiato il nome di un comune?
+- **Confrontare dataset di anni diversi** senza inciampare sui codici cambiati: la
+  traslazione codici mappa ogni comune del 2001 nel corrispondente di oggi.
+- **Trovare il bacino economico di riferimento** di un comune tramite i Sistemi Locali
+  del Lavoro (SLL), con la specializzazione produttiva dell'area.
+- **Usare le classificazioni europee** (Cities, FUA, NUTS3) per confronti con dati
+  EUROSTAT: urban/rural, zone costiere, regioni di confine.
 
 ## Installazione
 
 ```bash
-uv tool install opensituas        # CLI a livello di sistema
-# oppure, in sviluppo:
-uv pip install -e .
+uv tool install opensituas
 ```
-
-## Cosa espone SITUAS
-
-Due tipi di interrogazione, entrambi coperti:
-
-1. **Catalogo report** — 74 "microservizi" (report) su unità amministrative e statistiche
-   (ripartizioni, regioni, province/uts, comuni, sistemi locali del lavoro, ...). Ogni report
-   ha un periodo di validità e restituisce una tabella alla data scelta.
-2. **Query territoriali interattive** — storia delle variazioni di un'unità nel tempo
-   (`storia`) e ricerca dei codici/denominazioni Istat con periodi di validità (`cerca-codice`).
 
 ## Comandi
 
