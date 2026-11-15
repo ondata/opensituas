@@ -1,3 +1,16 @@
+# Skill `release` - 2026-11-15
+
+- [x] Leggere `docs/release.md` e le release precedenti → verify: procedura e formato note noti
+- [x] Scrivere `.claude/skills/release/SKILL.md`, solo invocazione manuale → verify: frontmatter con `disable-model-invocation: true`
+- [x] Provare a secco i comandi di verifica (`uv build -o`, `twine check`, import della wheel, API PyPI) → verify: tutti eseguiti in `tmp/`, nessuna pubblicazione; il controllo versione rileva `__version__` 0.1.0 contro 0.1.2
+
+## Review
+
+- Skill committata nel branch `chore/release-skill`.
+- Tolto `Bash(twine upload *)` da `settings.local.json` (file locale, non committato).
+- `__version__` da `importlib.metadata`; test `tests/test_version.py` rosso prima del fix, verde dopo; 63 test verdi, ruff pulito.
+- Trovato: `uv run --with <wheel>` riusa la cache a parità di nome file; aggiunto `--no-cache` nella skill.
+
 # Release opensituas 0.1.0 su PyPI
 
 Segue il flusso di `opensdmx/docs/release.md`. Versione già 0.1.0 in pyproject.
