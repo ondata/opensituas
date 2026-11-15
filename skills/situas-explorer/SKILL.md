@@ -114,7 +114,7 @@ provincia/uts e comune con tutte le denominazioni ufficiali.
 
 ```bash
 opensituas -o json storia comune "Sesto San Giovanni"
-opensituas -o json storia comune 015179 --dettaglio   # + provvedimento e unità coinvolte
+opensituas -o json storia comune 015209 --dettaglio   # + provvedimento e unità coinvolte
 opensituas -o json storia provincia "Milano"
 ```
 
@@ -183,7 +183,7 @@ classificazioni di policy del territorio italiano.
 ```bash
 opensituas -o csv get 75 --out comuni_policy.csv
 # Filtra solo comuni ultraperiferici:
-opensituas -o json get 75 | jq '[.[] | select(.AREE_INT_2020 == "F-Ultraperiferico")]'
+opensituas -o json get 75 | jq '[.[] | select(.AREE_INT_2020 == "F")]'
 # Conta comuni per classe aree interne:
 opensituas -o json get 75 | jq 'group_by(.AREE_INT_2020) | map({classe: .[0].AREE_INT_2020, n: length})'
 ```
@@ -192,11 +192,11 @@ Campi chiave:
 
 | Campo | Contenuto |
 |---|---|
-| `AREE_INT_2020` | A-Polo · B-Polo intercomunale · C-Cintura · D-Intermedio · E-Periferico · F-Ultraperiferico |
-| `MACRO_AI_2020` | I=Aree interne · NI=Non interno |
-| `ZONE_MONTANE_2014` | 1=Totalmente montano · 2=Parzialmente montano · 3=Non montano |
-| `ZONE_V_NAT_2020` | Zone con vincoli naturali (non montane) |
-| `ZONE_S_SPECIFICI_2014` | Zone con vincoli specifici |
+| `AREE_INT_2020` | Solo la lettera: A=Polo · B=Polo intercomunale · C=Cintura · D=Intermedio · E=Periferico · F=Ultraperiferico (la guida del catalogo scrive `A-Polo`, ma nei dati c'è solo `A`) |
+| `MACRO_AI_2020` | I=Aree interne · C=Centri (non interno) |
+| `ZONE_MONTANE_2014` | 1=Ha zone montane nel territorio · 0=No |
+| `ZONE_V_NAT_2020` | Zone con vincoli naturali (non montane): 1=Sì · 0=No |
+| `ZONE_S_SPECIFICI_2014` | Zone con vincoli specifici: 1=Sì · 0=No |
 
 ---
 
@@ -208,8 +208,8 @@ opensituas -o json storia comune "Ledro" --dettaglio
 opensituas -o json storia comune "Sesto San Giovanni"
 # Tutte le variazioni dal 1991 (il più ricco: tipo, norma, testo):
 opensituas -o csv get 129 --out variazioni_1991.csv
-# Solo fusioni nel 2016:
-opensituas -o json get 129 | jq '[.[] | select(.ANNO == "2016" and (.DESC_COD_VARIAZIONE | contains("fusione")))]'
+# Comuni nati da fusione nel 2016 (una riga per ogni comune fuso: si contano i nuovi codici):
+opensituas -o json get 129 | jq '[.[] | select(.ANNO == "2016" and (.DESC_COD_VARIAZIONE | startswith("CS")) and (.TESTO_PROVVEDIMENTO | ascii_upcase | contains("FUSIONE")))] | map(.PRO_COM_T) | unique | length'
 # Cambi denominazione dall'Unità d'Italia:
 opensituas -o json get 104 --from 17/03/1861 --to 31/05/2026 | jq '.[].COMUNE'
 # Comuni soppressi (non ricostituiti):
@@ -217,8 +217,12 @@ opensituas -o json get 128 | jq 'length'
 ```
 
 Il report 129 contiene `DESC_COD_VARIAZIONE` (tipo variazione: CS=Costituzione,
-FU=Fusione, SC=Scorporo, CD=Cambio denominazione, ...) e `TESTO_PROVVEDIMENTO` con la
-descrizione normativa.
+ES=Estinzione, CD=Cambio denominazione, AP=Cambio appartenenza provincia,
+AQ/CE=Acquisizione/cessione territorio, AQES=Acquisizione per estinzione,
+CECS=Cessione per costituzione nuova unità, RN=Rinumerazione) e `TESTO_PROVVEDIMENTO` con la
+descrizione normativa. Non esiste un codice "fusione": una fusione è una `CS` del nuovo
+comune (con «FUSIONE» nel testo) più una `ES` per ogni comune soppresso, e il report ha una
+riga per ogni coppia nuovo comune/comune fuso. Il numero di righe non è il numero di fusioni.
 
 ---
 
