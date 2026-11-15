@@ -79,3 +79,45 @@ def test_casi_reali(query, atteso, entro):
     items = catalog._bundled()
     trovati = [int(e["Id report"]) for e in _which_search(query, items, entro)]
     assert atteso in trovati, f"{query!r}: atteso {atteso} nei primi {entro}, ottenuto {trovati}"
+
+
+# ------------------------------------------------------------------ libreria allineata alla CLI
+
+
+@pytest.fixture
+def catalogo_incluso(monkeypatch):
+    monkeypatch.setattr(catalog, "load_catalog", lambda **_: catalog._bundled())
+
+
+def test_libreria_which(catalogo_incluso):
+    import opensituas
+    from opensituas import service
+
+    df = opensituas.which("popolazione e superficie dei comuni")
+    assert list(df.columns) == list(service.WHICH_COLUMNS)
+    assert int(df.iloc[0]["pfun"]) == 74
+    assert len(opensituas.which("popolazione", limit=1)) == 1
+    assert len(opensituas.which()) == len(catalog._bundled())
+
+
+def test_libreria_which_nessun_risultato(catalogo_incluso):
+    import opensituas
+
+    with pytest.raises(opensituas.SituasError):
+        opensituas.which("xyz_inesistente_abc")
+
+
+@pytest.mark.parametrize("args", [["province cessate"], ["popolazione", "--limit", "5"], []])
+def test_cli_e_libreria_danno_lo_stesso_risultato(catalogo_incluso, args):
+    import json
+
+    from typer.testing import CliRunner
+
+    import opensituas
+    from opensituas.cli import app
+
+    result = CliRunner().invoke(app, ["-o", "json", "which", *args])
+    assert result.exit_code == 0, result.output
+    query = args[0] if args else None
+    limit = int(args[2]) if len(args) > 1 else 3
+    assert json.loads(result.output) == opensituas.which(query, limit=limit).to_dict("records")

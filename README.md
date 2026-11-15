@@ -92,6 +92,7 @@ import opensituas
 
 report = opensituas.catalog("comuni", unita="comune")
 print(report[["pfun", "titolo"]].head())
+print(opensituas.which("popolazione e superficie dei comuni"))  # come `opensituas which`
 
 comuni = opensituas.get(61)                       # snapshot più recente disponibile
 comuni_2020 = opensituas.get(61, date="01/01/2020")
@@ -133,6 +134,7 @@ le fusioni possono cambiare i codici e la composizione dei territori.
 | `count(pfun, *, date=None, date_from=None, date_to=None, timeout=60.0)` | Intero non negativo |
 | `storia(tipo, query, *, dettaglio=False)` | DataFrame degli eventi; `attrs["unita"]` contiene i metadati |
 | `cerca_codice(tipo, query, *, limit=20)` | DataFrame dei codici o delle voci di disambiguazione |
+| `which(query=None, *, limit=3)` | DataFrame dei report più pertinenti (titolo, unità, colonne) con il comando suggerito; senza query tutto il catalogo |
 
 - `pfun` accetta interi o stringhe. `tipo` è `comune`, `provincia` o `regione`;
   `query` è un nome o codice, da passare come stringa per preservare gli zeri iniziali.

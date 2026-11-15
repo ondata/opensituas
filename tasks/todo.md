@@ -8,6 +8,7 @@ Problema: `which` cerca solo in titolo/ambito/unità, con sottostringhe e senza 
 - [x] Fase 2 - indice: `scripts/build_which_index.py` → `src/opensituas/which_index.json`, 77 report, 35 KB, presente nella wheel; rigenerazione in `docs/release.md` (entrambi i flussi) e nella skill `release`.
 - [x] Fase 3 - ricerca: `src/opensituas/_which.py`; 88 test verdi, ruff pulito; verificato senza rete (indice letto dal pacchetto).
 - [x] Fase 4 - documentazione: esempi di help, README e demo web rilanciati con la CLI, primo risultato atteso; «comuni per anno» sostituito; LOG aggiornato.
+- [x] Libreria allineata: `opensituas.which()` su `service.which_records`, test di parità con la CLI; README e architettura aggiornati.
 - Decisioni: indice incluso nel pacchetto, sinonimi curati con un test ciascuno, consegna via PR.
 - Da fare fuori da questo lavoro: aggiornare `catalog_snapshot.json` (74 report contro 77 online).
 

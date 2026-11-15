@@ -1,6 +1,7 @@
 """Operazioni report condivise tra CLI e libreria, su record grezzi."""
 
 from . import _catalog, base
+from ._which import search as _which_search
 
 CATALOG_COLUMNS = (
     "pfun",
@@ -38,6 +39,48 @@ def catalog_records(
     return [
         dict(zip(CATALOG_COLUMNS, (entry.get(field) for field in fields)))
         for entry in entries
+    ]
+
+
+WHICH_COLUMNS = (
+    "pfun",
+    "titolo",
+    "analisi",
+    "ambito",
+    "unità",
+    "comando_suggerito",
+)
+
+
+def comando_suggerito(entry: dict) -> str:
+    """Comando opensituas suggerito per il report, con le date di default."""
+    pfun = entry.get("Id report", "?")
+    if _catalog.is_range(entry):
+        val = entry.get("Inizio/fine validità report", "")
+        parts = val.split(" - ") if " - " in val else ["", ""]
+        date_from = parts[0].strip() or "DD/MM/YYYY"
+        date_to = parts[1].strip() or "DD/MM/YYYY"
+        return f"opensituas get {pfun} --from {date_from} --to {date_to}"
+    default = _catalog.validity_end(entry) or "DD/MM/YYYY"
+    return f"opensituas get {pfun} --date {default}"
+
+
+def which_records(query: str | None = None, *, limit: int = 3) -> list[dict]:
+    """Report per una query in linguaggio naturale; senza query tutto il catalogo.
+
+    Solleva ``SituasError`` se la query non trova nessun report.
+    """
+    items = _catalog.load_catalog()
+    if query:
+        matched = _which_search(query, items, limit)
+        if not matched:
+            raise base.SituasError(f"Nessun report corrisponde a '{query}'")
+    else:
+        matched = items
+    fields = ("Id report", "Titolo report", "Analisi temporale", "Ambito territoriale", "Unità territoriale")
+    return [
+        {**dict(zip(WHICH_COLUMNS, (e.get(f) for f in fields))), "comando_suggerito": comando_suggerito(e)}
+        for e in matched
     ]
 
 

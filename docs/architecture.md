@@ -10,7 +10,8 @@ pandas per analisi e notebook. Date, envelope e header sono gestiti dai moduli c
 |---|---|
 | `base.py` | Client HTTP, costanti URL, `gateway()`/`publish_get()`, `rows()`, rilevamento errori |
 | `_catalog.py` | Catalogo interno: cache, filtri, lookup per `pfun`, gestione date dai link |
-| `service.py` | Operazioni condivise di catalogo, metadati, dati e conteggio su record grezzi |
+| `service.py` | Operazioni condivise di catalogo, ricerca `which`, metadati, dati e conteggio su record grezzi |
+| `_which.py` | Ricerca dei report per `which`: titolo, unità e colonne (`which_index.json`, rigenerato da `scripts/build_which_index.py`), parole vuote e sinonimi; nessuna rete |
 | `api.py` | Funzioni Python pubbliche e conversione dei risultati tabellari in DataFrame |
 | `territorial.py` | Query interattive: `storia` (variazioni) e `cerca_codice` |
 | `output.py` | Emissione `table`/`json`/`csv` |
@@ -25,6 +26,8 @@ Il servizio condiviso non dipende da pandas né da Typer. La CLI non converte ma
 DataFrame in JSON/CSV: conserva gli envelope, i null e i codici originali.
 `info()` restituisce un dizionario; `count()` valida il campo `NUM_ROWS` e restituisce
 un intero. La CLI mantiene invece il payload grezzo del conteggio.
+
+Ogni comando della CLI che restituisce dati ha la funzione corrispondente nella libreria, sullo stesso servizio (`agent-context` resta solo CLI: descrive i comandi). Un test confronta l'output JSON di `which` con `opensituas.which()`.
 
 `opensituas.catalog` è la funzione pubblica; il precedente modulo interno
 `catalog.py` è rinominato `_catalog.py` per evitare collisioni negli import.

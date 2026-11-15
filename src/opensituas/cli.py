@@ -16,9 +16,9 @@ from typing import Optional
 
 import typer
 
-from . import _catalog as catalog
 from . import base, output, service, territorial
-from ._which import search as _which_search
+from ._which import search as _which_search  # noqa: F401  (usato dai test)
+from .service import comando_suggerito as _comando_suggerito  # noqa: F401  (usato dai test)
 
 
 class OutputFormat(str, Enum):
@@ -329,20 +329,6 @@ def agent_context_cmd() -> None:
     sys.stdout.write(json.dumps(_AGENT_CONTEXT, ensure_ascii=False, indent=2) + "\n")
 
 
-def _comando_suggerito(entry: dict) -> str:
-    """Restituisce il comando opensituas suggerito con date di default per il report."""
-    pfun = entry.get("Id report", "?")
-    if catalog.is_range(entry):
-        val = entry.get("Inizio/fine validità report", "")
-        parts = val.split(" - ") if " - " in val else ["", ""]
-        date_from = parts[0].strip() or "DD/MM/YYYY"
-        date_to = parts[1].strip() or "DD/MM/YYYY"
-        return f"opensituas get {pfun} --from {date_from} --to {date_to}"
-    else:
-        default = catalog.validity_end(entry) or "DD/MM/YYYY"
-        return f"opensituas get {pfun} --date {default}"
-
-
 @app.command(
     "which",
     epilog=(
@@ -361,24 +347,7 @@ def which_cmd(
     """Trova report SITUAS da una query in linguaggio naturale (titolo, unità e colonne). Exit 2 se nessun match."""
 
     def go():
-        items = catalog.load_catalog()
-        if query:
-            matched = _which_search(query, items, limit)
-            if not matched:
-                raise base.SituasError(f"Nessun report corrisponde a '{query}'")
-        else:
-            matched = items
-        return [
-            {
-                "pfun": e.get("Id report"),
-                "titolo": e.get("Titolo report"),
-                "analisi": e.get("Analisi temporale"),
-                "ambito": e.get("Ambito territoriale"),
-                "unità": e.get("Unità territoriale"),
-                "comando_suggerito": _comando_suggerito(e),
-            }
-            for e in matched
-        ]
+        return service.which_records(query, limit=limit)
 
     output.emit(_run(go), title="Report SITUAS" + (f" per '{query}'" if query else ""))
 
