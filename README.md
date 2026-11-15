@@ -11,8 +11,8 @@ Qualsiasi analisi geografica sull'Italia parte da qui.
 Il **[SITUAS](https://situas.istat.it/)** (ISTAT) è la fonte autoritativa dei codici e delle denominazioni ufficiali
 di tutte le unità territoriali italiane — dall'Unità d'Italia a oggi. Contiene la
 storia di ogni fusione, ridenominazione e soppressione di comuni, province e regioni.
-`opensituas` lo espone come CLI orchestrabile, con output `table`/`json`/`csv` pronto
-per `jq`, DuckDB o un agente AI.
+`opensituas` lo espone come **CLI e libreria Python**: output `table`/`json`/`csv`
+per `jq`, DuckDB o un agente AI, e DataFrame pandas per analisi e notebook.
 
 opensituas è un'idea di [Alice Corona](https://alice-corona.eu/).
 
@@ -33,9 +33,28 @@ opensituas è un'idea di [Alice Corona](https://alice-corona.eu/).
 
 ## Installazione
 
+**Come CLI**, disponibile nel terminale (Python 3.12+):
+
 ```bash
 uv tool install opensituas
 ```
+
+**Come libreria**, nelle dipendenze di un progetto Python:
+
+```bash
+uv add opensituas
+```
+
+La nuova API Python descritta qui è in sviluppo e non è ancora pubblicata su PyPI.
+Per provarla prima del rilascio, aggiungere il checkout di questo branch al proprio
+progetto invece del pacchetto pubblicato:
+
+```bash
+uv add /percorso/assoluto/al/checkout/opensituas
+```
+
+La libreria include pandas; non serve un extra separato. L'installazione con
+`uv tool install` è isolata e non rende il modulo importabile dal proprio progetto.
 
 **Nota bene:** `opensituas` funziona ancora meglio accoppiato alla skill dedicata per
 qualsiasi agente AI che supporti le skill, che guida l'agente nel discovery del catalogo e nei casi d'uso più comuni:
@@ -45,6 +64,88 @@ npx skills add ondata/opensituas
 ```
 
 Per i dettagli sull'installazione della skill vedi [docs/skill/README.md](docs/skill/README.md).
+
+## Libreria Python
+
+Le funzioni sono disponibili direttamente da `opensituas`, senza avviare comandi
+shell. Gli esempi seguenti interrogano i servizi ISTAT e richiedono accesso alla
+rete (il catalogo dispone anche di cache e snapshot di fallback).
+
+```python
+import opensituas
+
+report = opensituas.catalog("comuni", unita="comune")
+print(report[["pfun", "titolo"]].head())
+
+comuni = opensituas.get(61)                       # snapshot più recente disponibile
+comuni_2020 = opensituas.get(61, date="01/01/2020")
+print(opensituas.count(61))                       # int, senza scaricare il report
+print(opensituas.info(61)["colonne"])             # lista di metadati in un dict
+
+storia = opensituas.storia("comune", "Roma", dettaglio=True)
+print(storia.attrs["unita"])                      # metadati dell'unità selezionata
+print(opensituas.cerca_codice("comune", "Roma"))
+
+roma = comuni.loc[comuni["PRO_COM_T"] == "058091"]
+roma.to_csv("roma.csv", index=False)
+```
+
+### Arricchire una tabella con i codici ISTAT
+
+I codici restano stringhe, con gli zeri iniziali: `058091` non diventa `58091`.
+Anche caricando file esterni, specificare il tipo, ad esempio
+`pd.read_csv("misure.csv", dtype={"PRO_COM_T": str})`.
+
+```python
+import pandas as pd
+
+# Dati dimostrativi locali, non statistiche ISTAT.
+misure = pd.DataFrame({"PRO_COM_T": ["058091"], "valore_demo": [10]})
+arricchiti = misure.merge(comuni, on="PRO_COM_T", how="left", validate="many_to_one")
+```
+
+Per dati storici scegliere uno snapshot coerente con la data della propria tabella:
+le fusioni possono cambiare i codici e la composizione dei territori.
+
+### Contratto dell'API
+
+| Funzione | Risultato |
+|---|---|
+| `catalog(keyword=None, *, ambito=None, unita=None, refresh=False)` | DataFrame del catalogo filtrato |
+| `info(pfun, *, timeout=60.0)` | Dizionario: `pfun`, `report`, `descrizione`, `colonne` |
+| `get(pfun, *, date=None, date_from=None, date_to=None, timeout=60.0)` | DataFrame dei dati |
+| `count(pfun, *, date=None, date_from=None, date_to=None, timeout=60.0)` | Intero non negativo |
+| `storia(tipo, query, *, dettaglio=False)` | DataFrame degli eventi; `attrs["unita"]` contiene i metadati |
+| `cerca_codice(tipo, query, *, limit=20)` | DataFrame dei codici o delle voci di disambiguazione |
+
+- `pfun` accetta interi o stringhe. `tipo` è `comune`, `provincia` o `regione`;
+  `query` è un nome o codice, da passare come stringa per preservare gli zeri iniziali.
+- Date `DD/MM/YYYY`: per report **DATA**, `get`/`count` senza `date` usano la fine
+  validità; per report **PERIODO**, usare `date_from`/`date_to` (i valori omessi
+  rimangono quelli nei link del catalogo). Non mescolare i due tipi di filtro.
+  Ad esempio: `opensituas.get(99, date_from="21/10/2001", date_to="31/12/2024")`.
+- Nomi delle colonne, ordine e codici testuali restano quelli dei record. Non si
+  convertono automaticamente stringhe in numeri o date e non si riempiono i mancanti.
+- Un risultato senza righe è un DataFrame vuoto: il catalogo mantiene le sue colonne
+  note, mentre report e storia senza eventi non ricostruiscono le colonne con richieste extra.
+- Con `storia(..., dettaglio=True)`, `provvedimento` e `unita_coinvolte` sono liste
+  nelle celle; dettagli non disponibili sono liste vuote, come nella CLI.
+  Gli `attrs` di pandas non sono garantiti dopo trasformazioni o esportazioni.
+- Oltre `limit` criteri di ricerca distinti, `cerca_codice` restituisce una riga con
+  `_ambiguo` e fino a `limit` voci `V`: non sono risultati completi. Restringere la
+  ricerca usando un codice preciso.
+- `timeout` riguarda le richieste **publish** di `info`/`get`/`count`, non il
+  caricamento del catalogo o le query territoriali (default 60 secondi).
+  `OPENSITUAS_TIMEOUT` rimane un'opzione della CLI, non della libreria.
+- Gli errori applicativi/API sono eccezioni `SituasError`: la libreria non stampa
+  messaggi né termina il processo. Un conteggio vuoto o non valido è un errore, non zero.
+
+```python
+try:
+    dati = opensituas.get(61, timeout=30.0)
+except opensituas.SituasError as errore:
+    print(f"Dati non disponibili: {errore}")
+```
 
 ## Comandi
 

@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import json
 
-import pytest
 from typer.testing import CliRunner
 
 from opensituas.cli import _AGENT_CONTEXT, _comando_suggerito, _which_search, app
@@ -105,13 +104,15 @@ def test_comando_suggerito_periodo():
     assert "--date" not in cmd
 
 
-def test_which_cmd_no_match_exit2():
+def test_which_cmd_no_match_exit2(monkeypatch):
+    from opensituas import _catalog
+    monkeypatch.setattr(_catalog, "load_catalog", lambda **_: _CATALOG_SAMPLE)
     result = runner.invoke(app, ["which", "xyz_inesistente_abc"])
     assert result.exit_code == 2
 
 
 def test_which_cmd_no_args_returns_all(monkeypatch):
-    from opensituas import catalog as cat_module
+    from opensituas import _catalog as cat_module
     monkeypatch.setattr(cat_module, "load_catalog", lambda **_: _CATALOG_SAMPLE)
     result = runner.invoke(app, ["-o", "json", "which"])
     assert result.exit_code == 0
