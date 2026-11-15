@@ -1,5 +1,9 @@
 LOG
 
+## 2026-11-15 — Agent quickstart
+
+- Aggiunta al README la sezione `Agent quickstart`: prompt da incollare in un agente, con verifica o installazione su conferma, lettura dell'help, una chiamata reale (`cerca-codice comune Ledro`, provata a mano il 2026-11-15 con v0.2.0) e regole su date, validità, zeri iniziali e nomi ambigui. Prompt non ancora provato in una sessione pulita di un agente.
+
 ## 2026-11-15 — v0.2.0
 
 - Release v0.2.0: prima versione pubblicata con la libreria Python. Tolta dal README la nota che descriveva l'API come non ancora su PyPI.

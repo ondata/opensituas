@@ -31,6 +31,30 @@ opensituas è un'idea di [Alice Corona](https://alice-corona.eu/).
 - **Usare le classificazioni europee** (Cities, FUA, NUTS3) per confronti con dati
   EUROSTAT: urban/rural, zone costiere, regioni di confine.
 
+## Agent quickstart
+
+Un prompt da copiare e incollare in un agente AI, senza installare prima la skill o configurare altro. L'agente controlla se `opensituas` c'è, legge l'help, fa una prima interrogazione reale e ti propone come proseguire.
+
+```text
+Aiutami a usare opensituas (https://github.com/ondata/opensituas), una CLI Python che interroga il SITUAS dell'ISTAT (https://situas.istat.it/): codici e denominazioni ufficiali di comuni, province e regioni italiane a una data qualsiasi, la storia delle loro variazioni dal 1861 e un catalogo di report con popolazione, superficie e classificazioni territoriali. È in sola lettura.
+
+Procedi così:
+1. Controlla se `opensituas --help` funziona. Se manca e l'ambiente lo permette, chiedimi conferma e installalo con `uv tool install opensituas` (oppure `pip install opensituas`).
+2. Leggi `opensituas --help`. Per avere comandi, opzioni ed exit code in forma strutturata usa `opensituas agent-context`.
+3. Esegui una sola interrogazione di prova e mostrami il risultato reale: `opensituas -o json cerca-codice comune Ledro`
+4. Proponimi cosa posso chiedere. Per trovare il report giusto usa `opensituas -o json which "<domanda>"` o `opensituas -o json catalog "<parola>"`, poi `info <pfun>` per le colonne, prima di scaricare dati con `get`.
+
+Regole:
+- Usa `-o json` e leggi l'output con jq o con il tuo parser, non la tabella.
+- Le date si scrivono GG/MM/AAAA. Per i report di tipo DATA, senza `--date` ottieni il dato più recente; per una data storica controlla prima in `catalog` il periodo di validità del report. Fuori da quel periodo il comando esce con codice 2 e il messaggio REPORT NON DISPONIBILE.
+- I codici Istat sono testo: conserva gli zeri iniziali (058091, non 58091).
+- Se un nome è ambiguo, il comando elenca i candidati: rilancia con il codice, non sceglierne uno a caso.
+- Non dedurre il significato delle colonne dal nome: leggilo con `info`.
+- Per il resto segui la documentazione: https://github.com/ondata/opensituas/blob/main/README.md e https://github.com/ondata/opensituas/blob/main/skills/situas-explorer/SKILL.md
+
+Mostrami i comandi usati e i risultati reali, con la fonte (SITUAS, ISTAT), la data di riferimento dei dati e i limiti. Tieni distinti i dati restituiti dal SITUAS dalle tue elaborazioni. Se installazione, rete o esecuzione non sono disponibili, dimmi cosa è bloccato e dammi i comandi documentati da lanciare a mano. Non inventare risultati e non dire di aver eseguito ciò che non hai eseguito. Rispondimi nella mia lingua.
+```
+
 ## Installazione
 
 **Come CLI**, disponibile nel terminale (Python 3.12+):
