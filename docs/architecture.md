@@ -11,7 +11,7 @@ pandas per analisi e notebook. Date, envelope e header sono gestiti dai moduli c
 | `base.py` | Client HTTP, costanti URL, `gateway()`/`publish_get()`, `rows()`, rilevamento errori |
 | `_catalog.py` | Catalogo interno: cache, filtri, lookup per `pfun`, gestione date dai link |
 | `service.py` | Operazioni condivise di catalogo, ricerca `which`, metadati, dati e conteggio su record grezzi |
-| `_which.py` | Ricerca dei report per `which`: titolo, unità e colonne (`which_index.json`, rigenerato da `scripts/build_which_index.py`), parole vuote e sinonimi; nessuna rete |
+| `_which.py` | Ricerca dei report per `which`: titolo, unità e colonne (`which_index.json`, rigenerato da `scripts/build_which_index.py`), parole vuote e sinonimi. Nessuna rete per la ricerca; il catalogo arriva da `load_catalog()` come per `catalog` |
 | `api.py` | Funzioni Python pubbliche e conversione dei risultati tabellari in DataFrame |
 | `territorial.py` | Query interattive: `storia` (variazioni) e `cerca_codice` |
 | `output.py` | Emissione `table`/`json`/`csv` |

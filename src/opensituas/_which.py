@@ -2,7 +2,8 @@
 
 Le colonne vengono da ``which_index.json`` (incluso nel pacchetto, rigenerato con
 ``scripts/build_which_index.py``): così «popolazione» trova «Comuni - Dimensione»
-anche se la parola non è nel titolo. Nessuna chiamata di rete.
+anche se la parola non è nel titolo. Questo modulo non fa chiamate di rete: il
+catalogo da cercare lo riceve già caricato.
 """
 
 from __future__ import annotations

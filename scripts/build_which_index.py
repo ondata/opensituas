@@ -13,13 +13,24 @@ from pathlib import Path
 
 import opensituas
 from opensituas import _catalog as catalog
+from opensituas import base
 
 OUT = Path(__file__).resolve().parents[1] / "src" / "opensituas" / "which_index.json"
 
 
 def main() -> int:
+    # Catalogo letto dal gateway senza i ripieghi di load_catalog (cache, snapshot):
+    # un catalogo vecchio farebbe sparire dall'indice i report nuovi.
+    try:
+        items = base.gateway(catalog._SERVICE).get("items", [])
+    except base.SituasError as exc:
+        print(f"Indice non scritto, catalogo online non disponibile: {exc}", file=sys.stderr)
+        return 1
+    if not items:
+        print("Indice non scritto, il catalogo online è vuoto", file=sys.stderr)
+        return 1
     reports, falliti = {}, []
-    for entry in catalog.load_catalog(refresh=True):
+    for entry in items:
         pfun = entry["Id report"]
         try:
             colonne = opensituas.info(pfun)["colonne"]
