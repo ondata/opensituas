@@ -45,14 +45,6 @@ uv tool install opensituas
 uv add opensituas
 ```
 
-La nuova API Python descritta qui è in sviluppo e non è ancora pubblicata su PyPI.
-Per provarla prima del rilascio, aggiungere il checkout di questo branch al proprio
-progetto invece del pacchetto pubblicato:
-
-```bash
-uv add /percorso/assoluto/al/checkout/opensituas
-```
-
 La libreria include pandas; non serve un extra separato. L'installazione con
 `uv tool install` è isolata e non rende il modulo importabile dal proprio progetto.
 

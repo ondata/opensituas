@@ -1,7 +1,8 @@
 LOG
 
-## 2026-11-15
+## 2026-11-15 — v0.2.0
 
+- Release v0.2.0: prima versione pubblicata con la libreria Python. Tolta dal README la nota che descriveva l'API come non ancora su PyPI.
 - Skill di progetto `release` (`.claude/skills/release/SKILL.md`, invocabile solo a mano con `/release [patch|minor|major|X.Y.Z]`): segue `docs/release.md` con controlli bloccanti (main allineato, tag e versione PyPI liberi, ruff, pytest, `twine check`, versione della wheel installata) e una conferma prima di push, GitHub release e PyPI. Build in `tmp/release-dist` invece di `dist/`. `__version__` era fermo a `0.1.0` con il pacchetto a `0.1.2`: ora lo legge `importlib.metadata`, con test in `tests/test_version.py`. Tolto il permesso automatico `twine upload` da `settings.local.json`: la conferma la chiede la skill.
 - Libreria Python nel branch `feat/python-library`: `catalog`, `get`, `storia` e `cerca_codice` restituiscono DataFrame pandas; `info` restituisce un dizionario e `count` un intero validato. Codici testuali e zeri iniziali preservati.
 - Servizio condiviso estratto dalla CLI, che conserva output, envelope ed exit code; modulo interno rinominato `_catalog.py` per liberare la funzione pubblica `catalog`.

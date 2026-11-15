@@ -1,6 +1,6 @@
 [project]
 name = "opensituas"
-version = "0.1.2"
+version = "0.2.0"
 description = "CLI e libreria Python per il SITUAS (Sistema Informativo Territoriale delle Unità Amministrative e Statistiche, ISTAT)"
 readme = "README.md"
 authors = [
