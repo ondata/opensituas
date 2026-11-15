@@ -11,9 +11,8 @@ import sys
 from datetime import date
 from pathlib import Path
 
-import opensituas
 from opensituas import _catalog as catalog
-from opensituas import base
+from opensituas import base, service
 
 OUT = Path(__file__).resolve().parents[1] / "src" / "opensituas" / "which_index.json"
 
@@ -33,8 +32,9 @@ def main() -> int:
     for entry in items:
         pfun = entry["Id report"]
         try:
-            colonne = opensituas.info(pfun)["colonne"]
-        except opensituas.SituasError as exc:
+            # catalogo appena scaricato: una cache vecchia non conosce i report nuovi
+            colonne = service.report_info(pfun, catalog=items)["colonne"]
+        except base.SituasError as exc:
             falliti.append(f"{pfun}: {exc}")
             continue
         reports[str(pfun)] = [f"{c['colonna']} {c.get('label') or ''}".strip() for c in colonne]

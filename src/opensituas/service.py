@@ -84,8 +84,14 @@ def which_records(query: str | None = None, *, limit: int = 3) -> list[dict]:
     ]
 
 
-def report_info(pfun: int | str, *, timeout: float = base.DEFAULT_TIMEOUT) -> dict:
-    entry = _catalog.get_entry(pfun)
+def report_info(
+    pfun: int | str,
+    *,
+    timeout: float = base.DEFAULT_TIMEOUT,
+    catalog: list[dict] | None = None,
+) -> dict:
+    """Metadati del report; ``catalog`` evita di rileggere cache o gateway."""
+    entry = _catalog.get_entry(pfun, catalog)
     link = _catalog.apply_date(
         entry["INFO_LINK"], default_date=_catalog.validity_end(entry)
     )

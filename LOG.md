@@ -6,7 +6,7 @@ LOG
 - Ricerca in `_which.py`: parole vuote italiane ignorate, radice comune (soppresse/soppressi), sinonimi minimi (cessati, fusioni, montagna, abitanti, estensione), titolo 3 punti e colonne 1, a parità prima i report comunali. La ricerca non usa la rete; il catalogo si carica come per `catalog` (cache, gateway, snapshot).
 - Test `tests/test_which_search.py` sui 21 casi verificati, rossi prima del fix; 88 test verdi. Esempio «comuni per anno» sostituito: non individuava un report preciso.
 - `opensituas.which()` aggiunto alla libreria: CLI e libreria usano `service.which_records`, stesso risultato (test di parità). Principio: ogni comando dati della CLI ha la sua funzione nella libreria.
-- Revisione Greptile della PR #5: corretta la docstring di `which()` che prometteva «senza rete»; `scripts/build_which_index.py` legge il catalogo dal gateway senza ripieghi su cache o snapshot, ed esce senza scrivere se non è disponibile (test `tests/test_build_which_index.py`).
+- Revisione Greptile della PR #5: corretta la docstring di `which()` che prometteva «senza rete»; `scripts/build_which_index.py` legge il catalogo dal gateway senza ripieghi su cache o snapshot, ed esce senza scrivere se non è disponibile; i metadati usano lo stesso catalogo scaricato (`service.report_info(..., catalog=)`), così una cache vecchia non blocca i report nuovi (test `tests/test_build_which_index.py`).
 - Lo snapshot del catalogo incluso ha 74 report, il catalogo online 77 (466, 467, 469): non aggiornato qui.
 
 ## 2026-11-15 — Agent quickstart
