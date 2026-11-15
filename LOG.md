@@ -1,5 +1,13 @@
 LOG
 
+## 2026-11-15
+
+- Libreria Python nel branch `feat/python-library`: `catalog`, `get`, `storia` e `cerca_codice` restituiscono DataFrame pandas; `info` restituisce un dizionario e `count` un intero validato. Codici testuali e zeri iniziali preservati.
+- Servizio condiviso estratto dalla CLI, che conserva output, envelope ed exit code; modulo interno rinominato `_catalog.py` per liberare la funzione pubblica `catalog`.
+- Aggiunta dipendenza `pandas>=2.0`, aggiornati README, architettura, specifica e piano. Nessun aggiornamento versione o pubblicazione PyPI.
+- Autorizzati commit, push del branch e apertura di una Pull Request verso `main`; merge e release restano esclusi.
+- Verifiche: 62 test passati (baseline 29), Ruff pulito; wheel/sdist costruiti e wheel installata in venv temporaneo con snapshot incluso. Review locale senza revisore indipendente; nessuna chiamata live SITUAS. Ambiente test: Python 3.14.0, pandas 3.1.1.
+
 ## 2026-06-02 — v0.1.2
 
 - Fix `info`: l'endpoint `INFO_LINK` nel catalogo porta `pdata=<inizio validità>` e

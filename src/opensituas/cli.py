@@ -16,7 +16,8 @@ from typing import Optional
 
 import typer
 
-from . import base, catalog, output, territorial
+from . import _catalog as catalog
+from . import base, output, service, territorial
 
 
 class OutputFormat(str, Enum):
@@ -173,20 +174,7 @@ def catalog_cmd(
     """Elenca i report del catalogo (74 microservizi). Mostra anche il periodo di validità."""
 
     def go():
-        items = catalog.load_catalog(refresh=refresh)
-        items = catalog.filter_catalog(items, keyword=keyword, ambito=ambito, unita=unita)
-        return [
-            {
-                "pfun": e.get("Id report"),
-                "titolo": e.get("Titolo report"),
-                "validità": e.get("Inizio/fine validità report"),
-                "analisi": e.get("Analisi temporale"),
-                "ambito": e.get("Ambito territoriale"),
-                "unità": e.get("Unità territoriale"),
-                "parametri": e.get("parametri necessari"),
-            }
-            for e in items
-        ]
+        return service.catalog_records(keyword, ambito=ambito, unita=unita, refresh=refresh)
 
     output.emit(_run(go), title="Catalogo SITUAS")
 
@@ -202,24 +190,7 @@ def info_cmd(pfun: int = typer.Argument(..., help="Id report (campo pfun del cat
     """Metadati di un report: descrizione e dettaglio delle colonne."""
 
     def go():
-        entry = catalog.get_entry(pfun)
-        link = catalog.apply_date(entry["INFO_LINK"], default_date=catalog.validity_end(entry))
-        data = base.publish_get(link, timeout=_timeout())
-        cols = data.get("COL_DETAILS", [])
-        return {
-            "pfun": pfun,
-            "report": data.get("REPORT NAME"),
-            "descrizione": data.get("REPORT DESCRIZIONE"),
-            "colonne": [
-                {
-                    "colonna": c.get("COLNAME"),
-                    "label": c.get("LABEL"),
-                    "tipo": c.get("TYPE"),
-                    "guida": c.get("GUIDA"),
-                }
-                for c in cols
-            ],
-        }
+        return service.report_info(pfun, timeout=_timeout())
 
     result = _run(go)
     if output.get_mode() == "table":
@@ -252,12 +223,9 @@ def get_cmd(
     """Scarica i dati di un report. Default report DATA: dato più recente (fine validità); override con --date / --from/--to."""
 
     def go():
-        entry = catalog.get_entry(pfun)
-        link = catalog.apply_date(
-            entry["SPOOL_LINK"], date, date_from, date_to,
-            default_date=catalog.validity_end(entry),
+        return service.report_records(
+            pfun, date=date, date_from=date_from, date_to=date_to, timeout=_timeout(),
         )
-        return base.rows(base.publish_get(link, timeout=_timeout()))
 
     rows = _run(go)
     if out:
@@ -292,12 +260,9 @@ def count_cmd(
     """Numero di righe di un report (senza scaricarle). Default report DATA: dato più recente (fine validità)."""
 
     def go():
-        entry = catalog.get_entry(pfun)
-        link = catalog.apply_date(
-            entry["COUNT_LINK"], date, date_from, date_to,
-            default_date=catalog.validity_end(entry),
+        return service.count_records(
+            pfun, date=date, date_from=date_from, date_to=date_to, timeout=_timeout(),
         )
-        return base.rows(base.publish_get(link, timeout=_timeout()))
 
     output.emit(_run(go), title=f"Conteggio report {pfun}")
 

@@ -1,17 +1,40 @@
 Architettura
 
-`opensituas` è prima di tutto uno strato di esecuzione per agenti AI: l'agente legge
-stdout e compone i comandi. La complessità (date, envelope, header) è incapsulata nella CLI.
+`opensituas` espone CLI e libreria Python sullo stesso strato di esecuzione SITUAS.
+La CLI offre stdout strutturato per agenti AI; la libreria restituisce DataFrame
+pandas per analisi e notebook. Date, envelope e header sono gestiti dai moduli condivisi.
 
 ## Mappa moduli
 
 | Modulo | Ruolo |
 |---|---|
 | `base.py` | Client HTTP, costanti URL, `gateway()`/`publish_get()`, `rows()`, rilevamento errori |
-| `catalog.py` | Catalogo report: cache, filtri, lookup per `pfun`, gestione date dai link |
+| `_catalog.py` | Catalogo interno: cache, filtri, lookup per `pfun`, gestione date dai link |
+| `service.py` | Operazioni condivise di catalogo, metadati, dati e conteggio su record grezzi |
+| `api.py` | Funzioni Python pubbliche e conversione dei risultati tabellari in DataFrame |
 | `territorial.py` | Query interattive: `storia` (variazioni) e `cerca_codice` |
 | `output.py` | Emissione `table`/`json`/`csv` |
 | `cli.py` | App Typer e comandi |
+
+## CLI e libreria
+
+- CLI → `service.py` / `territorial.py` → HTTP → record grezzi → `output.py`.
+- Python → `api.py` → stesso servizio / query territoriali → record → DataFrame.
+
+Il servizio condiviso non dipende da pandas né da Typer. La CLI non converte mai
+DataFrame in JSON/CSV: conserva gli envelope, i null e i codici originali.
+`info()` restituisce un dizionario; `count()` valida il campo `NUM_ROWS` e restituisce
+un intero. La CLI mantiene invece il payload grezzo del conteggio.
+
+`opensituas.catalog` è la funzione pubblica; il precedente modulo interno
+`catalog.py` è rinominato `_catalog.py` per evitare collisioni negli import.
+`storia()` aggiunge i metadati dell'unità in `DataFrame.attrs["unita"]`; i dettagli
+annidati restano liste nelle celle e non vengono esplosi in altre righe.
+
+L'API Python non stampa e propaga `SituasError`. La CLI continua a intercettarla,
+stampare su stderr e uscire con codice 2. Gli import non effettuano richieste di
+rete né scrivono la cache. I timeout espliciti dell'API riguardano solo publish;
+catalogo e territoriali mantengono il timeout predefinito esistente.
 
 ## Le due basi API
 

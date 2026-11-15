@@ -1,7 +1,7 @@
 [project]
 name = "opensituas"
 version = "0.1.2"
-description = "CLI per il SITUAS (Sistema Informativo Territoriale delle Unità Amministrative e Statistiche, ISTAT), pensata per l'orchestrazione da parte di agenti AI"
+description = "CLI e libreria Python per il SITUAS (Sistema Informativo Territoriale delle Unità Amministrative e Statistiche, ISTAT)"
 readme = "README.md"
 authors = [
     { name = "Andrea Borruso", email = "aborruso@gmail.com" }
@@ -26,6 +26,7 @@ dependencies = [
     "httpx>=0.28",
     "typer>=0.15",
     "rich>=13.9",
+    "pandas>=2.0",
 ]
 
 [project.scripts]

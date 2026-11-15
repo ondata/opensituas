@@ -5,7 +5,8 @@ from __future__ import annotations
 import httpx
 import pytest
 
-from opensituas import base, catalog
+from opensituas import _catalog as catalog
+from opensituas import base
 
 
 def test_rows_resultset():
