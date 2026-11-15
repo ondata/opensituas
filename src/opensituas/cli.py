@@ -18,6 +18,7 @@ import typer
 
 from . import _catalog as catalog
 from . import base, output, service, territorial
+from ._which import search as _which_search
 
 
 class OutputFormat(str, Enum):
@@ -42,7 +43,7 @@ e `which <query>` (discovery report da linguaggio naturale).
 
 * `opensituas -o json storia comune Roma`
 
-* `opensituas which "comuni per anno"`
+* `opensituas which "popolazione e superficie dei comuni"`
 """
 
 _AGENT_CONTEXT = {
@@ -107,7 +108,7 @@ _AGENT_CONTEXT = {
         },
         {
             "name": "which",
-            "short": "Discovery semantica: trova report SITUAS da una query in linguaggio naturale.",
+            "short": "Trova report SITUAS da una query in linguaggio naturale: cerca in titolo, unità e colonne dei report.",
             "flags": [
                 {"name": "--limit", "type": "int", "usage": "Max risultati (default 3)"},
             ],
@@ -328,23 +329,6 @@ def agent_context_cmd() -> None:
     sys.stdout.write(json.dumps(_AGENT_CONTEXT, ensure_ascii=False, indent=2) + "\n")
 
 
-def _which_search(query: str, items: list[dict], limit: int) -> list[dict]:
-    """Cerca report per token della query su titolo/ambito/unità. Ordina per rilevanza."""
-    tokens = [t.lower() for t in query.split() if t]
-    results = []
-    for entry in items:
-        haystack = " ".join([
-            entry.get("Titolo report", ""),
-            entry.get("Ambito territoriale", ""),
-            entry.get("Unità territoriale", ""),
-        ]).lower()
-        score = sum(1 for t in tokens if t in haystack)
-        if score > 0:
-            results.append((score, entry))
-    results.sort(key=lambda x: x[0], reverse=True)
-    return [e for _, e in results[:limit]]
-
-
 def _comando_suggerito(entry: dict) -> str:
     """Restituisce il comando opensituas suggerito con date di default per il report."""
     pfun = entry.get("Id report", "?")
@@ -365,16 +349,16 @@ def _comando_suggerito(entry: dict) -> str:
         "Senza argomento elenca tutti i report con il comando suggerito.\n\n"
         "Exit code `2` = nessun report corrisponde alla query.\n\n"
         "**Esempi:**\n\n"
-        "* `opensituas which 'comuni per anno'`\n\n"
+        "* `opensituas which 'popolazione e superficie dei comuni'`\n\n"
         "* `opensituas which --limit 1 province`\n\n"
         "* `opensituas -o json which 'province cessate'`"
     ),
 )
 def which_cmd(
-    query: Optional[str] = typer.Argument(None, help="Query in linguaggio naturale (es. 'comuni per anno')"),
+    query: Optional[str] = typer.Argument(None, help="Query in linguaggio naturale (es. 'popolazione dei comuni')"),
     limit: int = typer.Option(3, "--limit", help="Max risultati (default 3)"),
 ) -> None:
-    """Trova report SITUAS da una query in linguaggio naturale. Exit 2 se nessun match."""
+    """Trova report SITUAS da una query in linguaggio naturale (titolo, unità e colonne). Exit 2 se nessun match."""
 
     def go():
         items = catalog.load_catalog()

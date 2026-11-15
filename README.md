@@ -187,7 +187,7 @@ opensituas cerca-codice comune Roma         # codici/denominazioni + validità
 
 # --- per agenti AI ---
 opensituas agent-context                    # JSON versionato: schema CLI (comandi, flag, exit code)
-opensituas which "comuni per anno"          # trova report SITUAS da linguaggio naturale
+opensituas which "popolazione e superficie dei comuni"  # trova report da linguaggio naturale (titolo, unità, colonne)
 opensituas which --limit 1 province        # max 1 risultato; exit 2 se nessun match
 opensituas -o json which "province cessate" | jq '.[].comando_suggerito'
 ```

@@ -37,8 +37,9 @@ git status --porcelain             # nessun file tracciato modificato
 
 1. `version = "X.Y.Z"` in `pyproject.toml`.
 2. `uv lock`
-3. `LOG.md`: nuova sezione in testa, con lo **stesso formato di intestazione delle release precedenti** (leggere l'ultima `## ... vX.Y.Z` e imitarla). Se esiste già una sezione con la data di oggi senza versione, aggiungerle la versione invece di duplicarla. Voci brevi, ricavate dai commit del passo 1.
-4. Bozza delle note di rilascio GitHub in `tmp/release-notes-vX.Y.Z.md`, in italiano, con la struttura della release precedente (`gh release view vULTIMO --json body --jq .body`).
+3. `uv run python scripts/build_which_index.py`: rigenera l'indice delle colonne usato da `which` (richiede rete). Se fallisce per qualche report, fermarsi.
+4. `LOG.md`: nuova sezione in testa, con lo **stesso formato di intestazione delle release precedenti** (leggere l'ultima `## ... vX.Y.Z` e imitarla). Se esiste già una sezione con la data di oggi senza versione, aggiungerle la versione invece di duplicarla. Voci brevi, ricavate dai commit del passo 1.
+5. Bozza delle note di rilascio GitHub in `tmp/release-notes-vX.Y.Z.md`, in italiano, con la struttura della release precedente (`gh release view vULTIMO --json body --jq .body`).
 
 ## 3. Verifiche (bloccanti)
 
@@ -64,12 +65,12 @@ Mostrare in un solo messaggio:
 - l'esito dei controlli del passo 3
 - i comandi esterni che verranno eseguiti (passo 5)
 
-Poi **chiedere conferma e aspettare**. Senza un sì esplicito ci si ferma qui; le modifiche locali restano, non committate, e si dice come annullarle (`git restore pyproject.toml uv.lock LOG.md`).
+Poi **chiedere conferma e aspettare**. Senza un sì esplicito ci si ferma qui; le modifiche locali restano, non committate, e si dice come annullarle (`git restore pyproject.toml uv.lock LOG.md src/opensituas/which_index.json`).
 
 ## 5. Pubblicazione (solo dopo il sì)
 
 ```bash
-git add pyproject.toml uv.lock LOG.md
+git add pyproject.toml uv.lock LOG.md src/opensituas/which_index.json
 git diff --cached --stat           # solo questi file
 git commit -m "chore: bump version to vX.Y.Z"
 git tag vX.Y.Z
