@@ -4,12 +4,12 @@ from __future__ import annotations
 
 from importlib.metadata import version as _version
 
-from .api import catalog, cerca_codice, count, get, info, storia
+from .api import catalog, cerca_codice, count, get, info, storia, which
 from .base import SituasError
 from .cli import app, main
 
 __all__ = [
-    "catalog", "info", "get", "count", "storia", "cerca_codice",
+    "catalog", "info", "get", "count", "storia", "cerca_codice", "which",
     "SituasError", "app", "main",
 ]
 __version__ = _version("opensituas")

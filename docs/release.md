@@ -19,6 +19,9 @@ Minimal subrelease workflow:
 # 2. Refresh lockfile
 uv lock
 
+# 2b. Rebuild the column index used by `which`
+uv run python scripts/build_which_index.py
+
 # 3. Update LOG.md with the patch notes
 
 # 4. Run linter and full test suite — both must pass before any publish step
@@ -56,6 +59,9 @@ uv tool install --editable .
 # 2. Update uv.lock
 uv lock
 
+# 2b. Rebuild the column index used by `which` (network: one `info` call per report)
+uv run python scripts/build_which_index.py
+
 # 3. Update LOG.md with changes
 
 # 4. Run linter and full test suite — both must pass before any publish step
@@ -87,6 +93,7 @@ Every release MUST complete all steps in order:
 
 - [ ] Version bumped in `pyproject.toml`
 - [ ] `uv.lock` updated (`uv lock`)
+- [ ] `which` column index rebuilt (`uv run python scripts/build_which_index.py`)
 - [ ] `LOG.md` updated
 - [ ] Linter passes (`uv run ruff check src/`)
 - [ ] Tests pass (`uv run pytest`)

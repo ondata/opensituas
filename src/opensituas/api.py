@@ -30,6 +30,19 @@ def catalog(
     return pd.DataFrame(records, columns=service.CATALOG_COLUMNS)
 
 
+def which(query: str | None = None, *, limit: int = 3) -> pd.DataFrame:
+    """Trova i report per una query in linguaggio naturale, come ``opensituas which``.
+
+    Cerca in titolo, unità e colonne dei report. L'indice delle colonne è incluso
+    nel pacchetto; il catalogo si carica come in ``catalog()`` (cache, poi gateway,
+    poi snapshot incluso), quindi senza cache valida può contattare ISTAT. Senza
+    ``query`` restituisce tutto il catalogo. Solleva ``SituasError`` se la query
+    non trova nessun report.
+    """
+    records = service.which_records(query, limit=limit)
+    return pd.DataFrame(records, columns=service.WHICH_COLUMNS)
+
+
 def info(pfun: int | str, *, timeout: float = base.DEFAULT_TIMEOUT) -> dict:
     """Metadati alla fine validità: pfun, report, descrizione, colonne.
 
